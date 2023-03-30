@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+        }
+
+        body {
+            background-color: aliceblue;
+        }
+
+        #nav>img {
+            height: 75px;
+            margin: auto;
+        }
+
+        #nav {
+            background-color: red;
+            display: flex;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+
+        }
+
+        #rightText {
+            width: 20%;
+            margin: auto;
+            margin-top: 5px;
+            margin-top: 0px;
+            margin-right: 10px;
+            text-decoration: none;
+            color: white;
+
+
+        }
+
+        #rightText a {
+            display: flex;
+            text-decoration: none;
+            color: white;
+
+
+        }
+
+        #up {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            margin-top: 5px;
+            padding-bottom: 12px;
+
+
+        }
+
+        #down {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+
+
+        }
+
+        #input {
+            height: 35px;
+            width: 450px;
+            border-radius: 20px;
+            border-width: 0px;
+            margin: auto;
+            margin-bottom: 10px;
+            padding-left: 15px;
+        }
+
+        .bluenav {
+            background-color: blue;
+            display: flex;
+            justify-content: space-evenly;
+            height: 30px;
+            margin: auto;
+
+        }
+
+        .bluenav>div {
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .bluenav>div>p {
+            color: white;
+            padding-top: 5px;
+            height: 30px;
+            margin: auto;
+            width: 130px;
+        }
+
+        .bluenav>div>p:hover {
+            background-color: red;
+            transition: 0.1s;
+        }
+
+        /* mobile container */
+        #mobiles_drop_down:hover+.containerMobiles {
+
+            opacity: 1;
+            transition: 1s;
+
+        }
+
+        .containerMobiles {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            padding-top: 20px;
+            opacity: 0;
+
+        }
+
+        .containerMobiles div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerMobiles div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerMobiles a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerMobiles p {
+            color: white;
+        }
+
+
+
+        /* Accessories container */
+        #accessories_drop_down:hover+.containerAccessories {
+            opacity: 1;
+            transition: 1s;
+        }
+
+        .containerAccessories {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -1130px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+
+        }
+
+        .containerAccessories div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerAccessories div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerAccessories a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerAccessories p {
+            color: white;
+        }
+
+        /* personal container */
+
+        #personal_drop_down:hover+.containerPersonal {
+            opacity: 1;
+            transition: 1s;
+
+        }
+
+        .containerPersonal {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -980px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+
+        }
+
+        .containerPersonal div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerPersonal div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerPersonal a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerPersonal p {
+            color: white;
+        }
+
+
+        /* TV Container */
+
+        #TV_drop_down:hover+.containerTV {
+            opacity: 1;
+            transition: 1s;
+
+        }
+
+        .containerTV {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -140px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+        }
+
+        .containerTV div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerTV div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerTV div:nth-child(3) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerTV a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerTV p {
+            color: white;
+        }
+
+
+        /* Audio Container */
+
+        #audio_drop_down:hover+.containerAudio {
+            opacity: 1;
+            transition: 1s;
+        }
+
+        .containerAudio {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -280px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+        }
+
+        .containerAudio div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerAudio div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerAudio div:nth-child(3) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerAudio div:nth-child(4) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerAudio a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerAudio p {
+            color: white;
+        }
+
+        /* Home appliances */
+
+        #home_drop_down:hover+.containerHomeAppliances {
+
+            opacity: 1;
+            transition: 1s;
+
+
+        }
+
+
+        .containerHomeAppliances {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -420px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+
+        }
+
+        .containerHomeAppliances div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerHomeAppliances div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerHomeAppliances div:nth-child(3) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerHomeAppliances a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerHomeAppliances p {
+            color: white;
+        }
+
+        /* computer container */
+
+        #computers_drop_down:hover+.containerComputers {
+            opacity: 1;
+            transition: 1s;
+
+        }
+
+        .containerComputers {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -560px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+
+        }
+
+        .containerComputers div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+            height: 200px;
+        }
+
+        .containerComputers div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerComputers div:nth-child(3) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerComputers a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerComputers p {
+            color: white;
+        }
+
+
+        /* camera container */
+
+        #camera_drop_down:hover+.containerCamera {
+            opacity: 1;
+            transition: 1s;
+
+        }
+
+        .containerCamera {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -705px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+
+        }
+
+        .containerCamera div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerCamera div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerCamera a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerCamera p {
+            color: white;
+        }
+
+        /* Kitchen container */
+
+        #kitchen_drop_down:hover+.containerKitchen {
+            opacity: 1;
+            transition: 1s;
+        }
+
+        .containerKitchen {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            translate: -850px;
+            opacity: 0;
+            margin: auto;
+            position: absolute;
+            padding-top: 20px;
+            transition: 1s;
+
+
+
+
+        }
+
+        .containerKitchen div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerKitchen div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerKitchen div:nth-child(3) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerKitchen a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerKitchen p {
+            color: white;
+        }
+
+
+        .items {
+            border: 2px solid red;
+            height: 500px;
+            margin-top: 20px;
+            width: 90%;
+            margin: auto;
+        }
+
+        #msale {
+            height: 450px;
+            width: 100%;
+            margin-block: 30px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        #msale>div:hover {
+            height: 105%;
+            width: 18%;
+            transition: 1s;
+
+
+        }
+
+        #msale>div {
+            height: 90%;
+            width: 15%;
+            padding: 10px;
+            background: rgb(255, 255, 255);
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            transition: 1s;
+            text-align: center;
+
+        }
+
+        #msale h5 {
+            font-weight: 600;
+            width: 100%;
+            margin-bottom: 5px;
+            margin: auto;
+            height: 40px;
+
+
+        }
+
+        #msale img {
+            height: 65%;
+            width: 100%;
+            margin: auto;
+
+        }
+
+        #msale>p {
+            font-size: 13px;
+            font-weight: 150;
+
+
+        }
+
+        #pricediv {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #price {
+            color: rgb(169, 152, 52);
+            font-family: 300px;
+            text-decoration: line-through;
+
+
+        }
+
+        #cart1 {
+            margin-top: 10px;
+            border: 0px;
+            background-color: rgb(186, 90, 90);
+            color: white;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            transition: 1s;
+
+        }
+
+        #cart1:hover {
+            width: 90px;
+            height: 10%;
+            transition: 4s;
+            font-size: smaller;
+        }
+
+        #price2 {
+            font-size: 21px;
+            color: rgb(91, 123, 49);
+        }
+
+        #disc {
+            color: rgb(186, 58, 58);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <img class="logo" src="./Images/Reliance-Digital-Logo-Vector-File.webp">
+        <input type="text" class="search" placeholder="Find your favourite products" id="input">
+        <div id="rightText">
+            <div id="up">
+                <a href="">Find a store</a>
+                <p>|</p>
+                <a href="">Buying guide</a>
+                <p>|</p>
+                <a href="">Contact us </a>
+            </div>
+            <div id="down">
+                <a href="">Select Pin Code</a>
+                <p>|</p>
+                <a href=""> Cart </a>
+                <p>|</p>
+                <a href="">Login </a>
+            </div>
+        </div>
+    </div>
+    <div class="bluenav">
+
+        <div id="mob">
+            <p id="mobiles_drop_down">Mobiles & Tablets</p>
+
+            <div class="containerMobiles">
+
+                <div>
+                    <a href=""><b>Smartphones</b></a><br>
+                    <a href=""><b>Smartwatches</b></a><br>
+                    <a href=""><b>Accessories</b></a>
+                    <p>Tablet Accessories</p>
+                    <a href="">Mobile Grips and stands</a>
+                    <a href="">Car Accessories</a>
+                    <a href="">Car Mobile Holders</a>
+                    <a href="">Memory Cards</a>
+                    <a href="">Cables and chords</a>
+                    <a href="">Chargers and adapters</a>
+                    <br>
+                </div>
+                <div>
+                    <a href=""><b>Headphones & headset</b></a><br>
+                    <p><b>Tablet & eReader</b></p>
+                    <a href="">Everyday Use Tablets below 15000</a>
+                    <a href="">Premium Tablets above 15001</a><br>
+                    <a href=""><b>Power Bank</b></a><br>
+                    <a href=""><b>eSlates</b></a>
+                </div>
+                <div>
+                    <a href=""><b>AI Learning Robots</b></a>
+                </div>
+                <img src="" alt="">
+
+
+
+            </div>
+
+        </div>
+        <div id="tv">
+            <p id="TV_drop_down">TV</p>
+            <div class="containerTV">
+
+                <div>
+                    <a href=""><b>Television</b></a>
+                    <a href="">Smart TVs</a>
+                    <a href="">32 inch TVs</a>
+                    <a href="">43 inch TVs</a>
+                    <a href="">55 inch TVs</a>
+                    <a href="">Android TVs</a>
+                    <br>
+                </div>
+                <div>
+                    <p><b>Gaming</b></p>
+                    <a href="">Gaming Consoles</a>
+                    <a href="">Gaming Accessories</a>
+                    <a href="">Gaming Titles</a><br>
+                    <a href=""><b>Projectors</b></a>
+                    <a href=""><b>Streaming Devices</b></a><br>
+
+                </div>
+                <div>
+                    <a href=""><b>Reconnect Disney | Marvel audio connection</b></a><br>
+                    <a href=""><b>TV and Audio Accessories</b></a>
+                    <a href="">Virtual reality headsets</a>
+                    <a href="">Stabalizers and surge protectors</a>
+
+
+                </div>
+                <img src="" alt="">
+            </div>
+        </div>
+        <div id="aud">
+            <p id="audio_drop_down">Audio</p>
+            <div class="containerAudio">
+
+                <div>
+                    <a href=""><b>Headphones and Headsets</b></a>
+                    <a href="">True Wireless</a>
+                    <a href="">Bluetooth Neckbands</a>
+                    <a href="">Wired Earphones</a>
+                    <a href="">On Ear Earphones</a>
+                    <a href="">Noise Cancelling Headphones</a><br>
+                </div>
+                <div>
+                    <a href=""><b>Bluethooth and WiFi speakers</b></a>
+                    <a href="">Bluetooth Speakers</a>
+                    <a href="">Smart Speakers</a>
+                </div>
+                <div>
+                    <a href=""><b>TV Speakers and soundbars</b></a>
+                    <a href="">Soundbars</a>
+                    <a href="">Party Speakers</a>
+                    <a href="">Multimedia Speakers</a>
+
+                </div>
+                <div>
+                    <a href=""><b>Musical instruments</b></a>
+                    <a href="">Guitars and Ukuleles</a>
+                    <a href="">Microphones</a>
+                    <a href="">Musical Keyboards</a>
+
+                </div>
+                <img src="" alt="">
+
+
+
+
+            </div>
+        </div>
+        <div id="hom">
+            <p id="home_drop_down">Home Appliances</p>
+            <div class="containerHomeAppliances">
+
+                <div>
+                    <a href=""><b>Air Conditioners</b></a>
+                    <a href="">Split Air Conditioners</a>
+                    <a href="">Window Air Conditioners</a>
+                    <a href="">Smart Air Conditioners</a>
+                    <a href="">Energy Efficient Air Conditioners</a>
+                    <a href="">1 Ton Air Conditioners</a>
+                    <a href="">1.5 Ton Air Conditioners</a>
+                    <a href="">5 Star Air Conditioners</a><br>
+                    <a href=""><b>Air Coolers</b></a><br>
+                    <a href=""><b>Air Purifiers</b></a><br>
+
+                </div>
+                <div>
+                    <a href=""><b>Washing Machines</b></a>
+                    <a href="">Fully Automatic Front load</a>
+                    <a href="">Fully Automatic Top load</a><br>
+                    <a href=""><b>Refrigerators</b></a>
+                    <a href="">Single door</a>
+                    <a href="">Double Door</a>
+                    <a href="">Side by side Refrigerators</a>
+                    <a href="">Convertible Refrigerators</a>
+                </div>
+                <div>
+                    <a href=""><b>Vaccum Cleaners</b></a>
+                    <a href="">Robotic Vaccum Cleaners</a><br>
+                    <a href=""><b>Dishwashers</b></a><br>
+                    <a href=""><b>Fans</b></a><br>
+                    <a href=""><b>Cloth Dryers</b></a><br>
+                    <a href=""><b>Room Heaters</b></a><br>
+
+
+
+                </div>
+                <img src="" alt="">
+
+
+
+
+            </div>
+        </div>
+        <div id="com">
+            <p id="computers_drop_down">Computers</p>
+            <div class="containerComputers">
+
+                <div>
+                    <a href=""><b>Laptops</b></a>
+                    <a href="">Basic use laptops</a>
+                    <a href="">Student Laptops</a>
+                    <a href="">Thin and light Laptops</a>
+                    <a href="">Multi-Tasking Laptops</a>
+                    <a href="">Gaming Laptops</a>
+                    <a href="">Content creator Laptops</a><br>
+                    <a href=""><b>Computer Monitors</b></a><br>
+                    <a href=""><b>Desktops & All-In-Ones</b></a><br>
+
+
+                </div>
+                <div>
+                    <a href=""><b>Bluetooth & WiFi Speakers</b></a><br>
+                    <a href=""><b>Internet Connectivity Devices</b></a>
+                    <a href="">Routers </a>
+                    <a href="">WiFi Range Extenders </a>
+                    <a href="">Wireless USB Adapters</a><br>
+                    <a href=""><b>Printers & Inks</b></a>
+                    <a href="">Printers </a>
+                    <a href="">Toners & Ink Cartridges</a><br>
+                    <a href=""><b>Data Storage Devices</b></a>
+                    <a href="">Memory Cards </a>
+                    <a href="">Pen Drives & OTG Drives</a>
+                    <a href="">Hard Disks & SSD</a><br>
+                </div>
+                <div>
+                    <a href=""><b>Computer Accessories</b></a>
+                    <a href="">Upto 72% Off, Only on Reliancedigital.in</a>
+                    <a href="">Computer Networking Cables</a>
+                    <a href="">Laptop Chargers & Adaptor</a>
+                    <a href="">Laptop Batteries</a>
+                    <a href="">Hubs & Docks</a>
+                    <a href="">Laptop Bags & Sleeves</a>
+                    <a href="">Laptop Cooling Pad</a>
+                    <a href="">Laptop Screen Protectors</a>
+                    <a href="">Laptop Tables & Stands</a>
+                    <a href="">Mouse Pads</a><br>
+                    <a href=""><b>Input Devices</b></a>
+                    <a href="">Keyboards</a>
+                    <a href="">Computer Mouse</a>
+                    <a href="">Stylus Pens</a><br>
+
+
+
+
+                </div>
+                <img src="" alt="">
+
+
+
+
+            </div>
+        </div>
+        <div id="cam">
+            <p id="camera_drop_down">Cameras</p>
+            <div class="containerCamera">
+
+                <div>
+                    <a href=""><b>DSLR Cameras</b></a>
+                    <a href=""><b>Mirrorless Cameras</b></a>
+                    <a href=""><b>Point & Shoot Cameras</b></a>
+                    <a href=""><b>ProSumer Cameras</b></a>
+                    <a href=""><b>Action Cameras</b></a>
+                    <a href=""><b>Photo Storage Devices</b></a>
+                    <a href="">Memory Cards</a>
+                    <a href="">Pen Drives</a><br>
+                </div>
+                <div>
+                    <a href=""><b>Binoculars</b></a><br>
+                    <a href=""><b>Camera Lens</b></a><br>
+                    <a href=""><b>Digital Camera Accessories</b></a>
+                    <a href="">Camera Batteries & Chargers</a>
+                    <a href="">Camera bags & cases</a>
+                    <a href="">Tripods & Monopods</a>
+                    <a href="">Action Camera Accessories</a><br>
+                </div>
+                <img src="" alt="">
+
+
+
+
+            </div>
+        </div>
+        <div id="kit">
+            <p id="kitchen_drop_down">Kitchen Appliances</p>
+            <div class="containerKitchen">
+
+                <div>
+                    <a href=""><b>Microwave Ovens</b></a>
+                    <a href=""><b>Water Purifiers</b></a>
+                    <a href=""><b>Fruits and Vegetable Cleaner</b></a>
+                    <a href=""><b>Mobile Grips and stands</b></a>
+                    <a href=""><b>Oven Toaster Grillers (OTG)</b></a>
+                    <a href=""><b>Cookwares</b></a>
+                    <a href=""><a>Juicer Mixer Grinders</a></a>
+                    <a href="">Juicers</a>
+                    <a href="">Hand Mixers</a>
+                    <a href="">Mixer Grinders</a>
+                    <a href="">Choppers & Slicers</a>
+                </div>
+                <div>
+                    <a href=""><b>Induction Cookers</b></a>
+                    <a href=""><b>Food Processors</b></a>
+                    <a href=""><b>Blenders</b></a>
+                    <a href=""><b>Kitchen Hobs & Gas Stoves</b></a>
+                    <a href=""><b>Kitchen Chimneys</b></a>
+                    <a href=""><b>Rice Cookers</b></a>
+                    <a href=""><b>Sandwich Makers</b></a>
+                    <a href=""><b>Popup Toasters</b></a>
+                    <a href=""><b>Coffee Makers & Grinders</b></a>
+                </div>
+                <div>
+                    <a href=""><b>Reconnect Disney|Marvel Kitchen Collection</b></a>
+                    <a href=""><b>Air Fryers</b></a>
+                    <a href=""><b>Electric Kettles</b></a>
+                    <a href=""><b>Water Dispensers</b></a>
+                    <a href=""><b>Wet Grinders</b></a>
+                    <a href=""><b>Flour Mills</b></a>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+        <div id="per">
+            <p id="personal_drop_down">Personal Care</p>
+            <div class="containerPersonal">
+
+                <div>
+                    <a href="">Smartphones</a>
+                    <a href="">Smartwatches</a>
+                    <a href="">Accessories</a>
+                    <p>Tablet Accessories</p>
+                    <a href="">Mobile Grips and stands</a>
+                    <a href="">Car Accessories</a>
+                    <a href="">Car Mobile Holders</a>
+                    <a href="">Memory Cards</a>
+                    <a href="">Cables and chords</a>
+                    <a href="">Chargers and adapters</a>
+                </div>
+                <div>
+                    <a href="">Headphones & headset</a>
+                    <p>Tablet & eReader</p>
+                    <a href="">Everyday Use Tablets below 15000</a>
+                    <a href="">Premium Tablets above 15001</a>
+                    <a href="">Power Bank</a>
+                    <a href="">eSlates</a>
+                </div>
+                <div>
+                    <a href="">AI Learning Robots</a>
+                </div>
+                <img src="" alt="">
+
+
+
+
+            </div>
+        </div>
+        <div id="acc">
+            <p id="accessories_drop_down">Accessories</p>
+            <div class="containerAccessories">
+
+                <div>
+                    <a href="">Smartphones</a>
+                    <a href="">Smartwatches</a>
+                    <a href="">Accessories</a>
+                    <p>Tablet Accessories</p>
+                    <a href="">Mobile Grips and stands</a>
+                    <a href="">Car Accessories</a>
+                    <a href="">Car Mobile Holders</a>
+                    <a href="">Memory Cards</a>
+                    <a href="">Cables and chords</a>
+                    <a href="">Chargers and adapters</a>
+                </div>
+                <div>
+                    <a href="">Headphones & headset</a>
+                    <p>Tablet & eReader</p>
+                    <a href="">Everyday Use Tablets below 15000</a>
+                    <a href="">Premium Tablets above 15001</a>
+                    <a href="">Power Bank</a>
+                    <a href="">eSlates</a>
+                </div>
+                <div>
+                    <a href="">AI Learning Robots</a>
+                </div>
+                <img src="" alt="">
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="header1">
+        <img id="himg">
+    </div>
+    <div class="header2">
+        <img id="himg">
+    </div>
+    <div class="items1">
+        <h1>Digital Midnight Sale - Limited Period Only!</h1>
+        <div id="msale">
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+<script>
+    let items1 = document.getElementsByClassName("items1")[0]
+    let msale = document.getElementById("msale")
+    let tv = document.getElementById("tv")
+    let aud = document.getElementById("aud")
+    let hom = document.getElementById("hom")
+    let com = document.getElementById("com")
+    let cam = document.getElementById("cam")
+    let kit = document.getElementById("kit")
+    let per = document.getElementById("per")
+    let acc = document.getElementById("acc")
+    let mobiles_drop_down = document.getElementById("mobiles_drop_down")
+    let containerMobiles = document.getElementsByClassName("containerMobiles")[0]
+    let containerTV = document.getElementsByClassName("containerTV")[0]
+    let containerAudio = document.getElementsByClassName("containerAudio")[0]
+    let containerHomeAppliances = document.getElementsByClassName("containerHomeAppliances")[0]
+    let containerComputers = document.getElementsByClassName("containerComputers")[0]
+    let containerCamera = document.getElementsByClassName("containerCamera")[0]
+    let containerKitchen = document.getElementsByClassName("containerKitchen")[0]
+    let containerPersonal = document.getElementsByClassName("containerPersonal")[0]
+    let containerAccessories = document.getElementsByClassName("containerAccessories")[0]
+
+
+
+    let header1 = document.getElementsByClassName("header1")[0]
+    let header2 = document.getElementsByClassName("header2")[0]
+
+    let i = 0
+
+
+
+
+
+    //For calling API
+
+    let API = "https://fakestoreapi.com/products"
+    function NoramalFetch() {
+        let promise = fetch(API);
+        promise.then(function (res) {
+            return res.json();
+        }).then(function (data) {
+            localStorage.setItem("APIdata", JSON.stringify(data))
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+    NoramalFetch()
+    let fetched = localStorage.getItem("APIdata")
+    fetched = JSON.parse(fetched)
+
+
+
+    // making discounts and adding them to fetched
+
+    let discounts1 = [20, 30, 20, 10, 34, 30, 20, 40, 10, 40, 50, 30, 10, 50, 21, 34, 12, 34, 45, 23]
+    for (let i = 0; i < fetched.length; i++) {
+        fetched[i].discounts = discounts1[i]
+
+    }
+
+
+
+    // for header 1
+    setInterval(() => {
+        header1.innerHTML = ""
+        himg = document.createElement("img")
+
+        himg.setAttribute("src", headerimages[i])
+        i++
+        if (i == 3) { i = 0 }
+
+        header1.append(himg)
+
+    }, 2500);
+
+    i = 0
+
+    // for header 
+    setInterval(() => {
+        header2.innerHTML = ""
+        himg = document.createElement("img")
+
+        himg.setAttribute("src", headerimages[i])
+        i++
+        if (i == 3) { i = 0 }
+
+        header2.append(himg)
+
+    }, 3000);
+
+    i = 0
+
+    //Images of header 1
+    let headerimages = [
+        "./Images/Header1 Images/IPL-Carousel-Banner-27-03-2023-02.jpg",
+        "./Images/Header1 Images/MIdnight-Sale-Carousel-D.jpg",
+        "./Images/Header1 Images/Summer-Offer-Reliance-1365x260 (1).jpg",
+    ]
+
+    // sorting fetched based on discounts and making it display max discounts
+
+
+    fetched.sort((b, a) => {
+        if (a.discounts < b.discounts) {
+            return -1;
+        } else if (a.discounts > b.discounts1) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+    console.log(fetched)
+
+    let cartdata = localStorage.getItem("cartdata")
+    if (cartdata === null) {
+        cartdata = []
+    } else {
+        cartdata = JSON.parse(cartdata)
+    }
+
+    fetched.forEach(element => {
+        for (let i = 0; i < cartdata.length; i++) {
+            if (element.id == cartdata[i].id) {
+                element.quantity = cartdata[i].quantity
+            }
+        }
+
+
+    });
+
+
+
+
+
+
+
+
+
+    //Displaying Images
+    function disc_disp(data) {
+        for (let i = 0; i < 6; i++) {
+            let card = document.createElement("div")
+            let img = document.createElement("img")
+            let title = document.createElement("h5")
+            let priceul = document.createElement("p")
+            let disc = document.createElement("p")
+            let pricediv = document.createElement("div")
+            let cart = document.createElement("button")
+            let price = document.createElement("p")
+
+
+
+
+
+
+
+            let str = ""
+            for (let j = 0; j < 40; j++) {
+                if (data[i].title[j] == undefined) {
+                    break
+                }
+
+                str = str + data[i].title[j]
+            }
+            title.innerText = str
+            pricediv.setAttribute("id", "pricediv")
+            price.setAttribute("id", "price2")
+
+            pricediv.setAttribute("id", "pricediv")
+            disc.setAttribute("id", "disc")
+            disc.innerText = data[i].discounts + " % OFF!"
+            priceul.setAttribute("id", "price")
+            priceul.innerText = "Price : " + data[i].price + "$"
+            cart.innerText = "Add to Cart"
+            cart.setAttribute("id", "cart1")
+            let p = 0
+            p = data[i].price * (1 - (data[i].discounts / 100))
+            p = Math.floor(p)
+            price.innerText = "Price : " + p + "$"
+            img.setAttribute("src", data[i].image)
+
+
+            cart.addEventListener("click", () => {
+                if (data[i].quantity !== undefined) {
+                    data[i].quantity++
+                    cartdata.forEach(element => {
+                        if (element.id == data[i].id) {
+                            data[i].quantity++
+                            element.quantity = data[i].quantity
+                        }
+
+                    });
+                } else {
+                    data[i].quantity = 1
+                    cartdata.push(data[i])
+                }
+
+
+                localStorage.setItem("cartdata", JSON.stringify(cartdata))
+
+
+
+
+
+            })
+
+
+
+            pricediv.append(priceul, disc)
+            card.append(img, title, pricediv, price, cart)
+            msale.append(card)
+        }
+    }
+
+
+    disc_disp(fetched)
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
