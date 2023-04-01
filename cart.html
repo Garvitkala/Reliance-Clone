@@ -86,19 +86,21 @@
         #cart {
             width: 90%;
             margin: auto;
-            border: 2px solid red;
         }
 
         .card {
-            border: 2px solid black;
             display: flex;
             justify-content: space-between;
+            margin-bottom: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            background-color: white;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
         }
 
         #imagediv {
             height: 200px;
             width: 200px;
-            border: 2px solid red;
         }
 
         #imagediv>img {
@@ -132,10 +134,10 @@
         }
 
         #pricediv {
-            width: 100px;
+            width: 200px;
         }
         #pricediv p{
-            font-size: 10px;
+            font-size: 8px;
             padding-top: 40px;
         }
         #pricediv>h4{
@@ -168,7 +170,81 @@
         }
         #rwdiv button{
             padding: 20px;
+            background-color: grey;
+            border: 0px;
+            border-radius: 10px;
+            color: white;
+            transition: 1s;
+            
         }
+        #rwdiv>button:nth-child(2){
+            background-color: red;
+        }
+        #rwdiv button:hover{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            transition: 0.5s;
+            
+        }
+        #rwdiv>button:nth-child(2):hover{
+
+            box-shadow: rgba(201, 20, 20, 0.25) 0px 54px 55px, rgba(201, 20, 20, 0.25)  0px -12px 30px, rgba(201, 20, 20, 0.25)  0px 4px 6px, rgba(201, 20, 20, 0.25)  0px 12px 13px, rgba(201, 20, 20, 0.25)  0px -3px 5px;
+
+        }
+        #checkout{
+            width: 500px;
+            height: 600px;
+            border: 2px solid red;
+        }
+        #page{
+            display: flex;
+        }
+        #checkout>button{
+            width: 100%;
+            color: white;
+            background-color: red;
+            padding: 10px;
+            border: 0px;
+            transition: 0.5s;
+
+
+        }
+        #checkout>button:hover{
+
+            background-color: rgb(161, 17, 17);
+            transition: 0.5s;
+        }
+        #pbox{
+            width: 100%;
+            margin-top: 30px;
+            border: 2px solid green;
+            display: flex;
+            justify-content: space-between;
+        }
+        #pbox input{
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
+        #pbox button{
+            background-color: rgb(243, 243, 243);
+            color: blue;
+            border: 0px;
+        }
+        #pbox button:hover{
+            background-color: rgb(190, 190, 190);
+
+
+        }
+        #totaldiv { 
+            padding-top: 100px;
+            text-align: center;
+           color: grey;
+        }
+        #totaldiv h4{
+            font-size: 10px;
+            margin: 10px;
+        }
+       
     </style>
 </head>
 
@@ -193,13 +269,28 @@
             </div>
         </div>
     </div>
-
-
-
     <h1>My Cart</h1>
+<div id="page">
     <div id="cart">
-
     </div>
+    
+    <div id="checkout">
+       <button>CHECKOUT</button>
+       <div id="pbox">
+         <input type="text" placeholder="COUPON CODE">
+         <button>Apply</button>
+       </div>
+     <div id="totaldiv">
+        <div id="billitems"></div>
+        <h3>Delivery charges : 100$</h3>
+        <hr>
+        <h2 id="totalp"></h2>
+     </div>
+    </div>
+</div>
+    
+    
+    
 
 
 
@@ -214,8 +305,9 @@
 
 <script>
     let cart = document.getElementById("cart")
-
+    let totalp=document.getElementById("totalp")
     let cartdata = localStorage.getItem("cartdata")
+    let billitems=document.getElementById("billitems")
     if (cartdata === null) {
         cartdata = []
     } else {
@@ -242,8 +334,12 @@
             let price2 = document.createElement("h3")
             let desc=document.createElement("p")
             let ysave=document.createElement("h4")
+            let totalp=document.createElement("h2")
+            let bill=document.createElement("h4")
 
 
+
+            rcart.setAttribute("id","rcart")
             rwdiv.setAttribute("id","rwdiv")
             titlediv.setAttribute("id","tdiv")
             price2.setAttribute("id", "price2")
@@ -268,8 +364,15 @@
             let p = 0
             p = data[i].price * (1 - (data[i].discounts / 100))
             p = Math.floor((p) * data[i].quantity)
-            price2.innerText = "MRP" + p + "$"
+            totalp.innerText=Number(totalp.innerText)+ p
+            
+
+            price2.innerText = "MRP " + p + "$"
             ysave.innerText= "You save: "  + Math.floor((data[i].price * data[i].quantity)-p) +"$"
+            wish.innerText="Add to Wishlist"
+            rcart.innerText="Remove from Cart"
+            bill.innerText=data[i].title +" : "+price2.innerText
+
 
 
 
@@ -277,10 +380,21 @@
                 quantity.innerText = Number(quantity.innerText) - 1
                 data[i].quantity--
                 localStorage.setItem("cartdata", JSON.stringify(cartdata))
-                price1.innerText = "MRP " + data[i].price * data[i].quantity + "$"
+                price1.innerText = "MRP " + Math.floor(data[i].price * data[i].quantity) + "$"
                 p = data[i].price * (1 - (data[i].discounts / 100))
                 p = Math.floor(p) * data[i].quantity
                 price2.innerText = "MRP" + p + "$"
+
+                if(data[i].quantity<1){
+                cartdata=cartdata.filter((element)=>{
+                if (element.id==data[i].id){ return false } else { return true }
+                
+             })
+                localStorage.setItem("cartdata",JSON.stringify(cartdata))
+                card.innerHTML=""
+            }                
+
+                
 
             })
             buttonRight.addEventListener("click", () => {
@@ -289,18 +403,30 @@
                 localStorage.setItem("cartdata", JSON.stringify(cartdata))
                 price1.innerText = "MRP " + Math.floor(data[i].price * data[i].quantity) + "$"
                 p = data[i].price * (1 - (data[i].discounts / 100))
-                p = Math.floor(p) * data[i].quantity
+                p = Math.floor((p) * data[i].quantity)
                 price2.innerText = "MRP" + p + "$"
 
+
+            
+
+            })
+            rcart.addEventListener("click",()=>{
+             cartdata=cartdata.filter((element)=>{
+                if (element.id==data[i].id){ return false } else { return true }
+             })
+                localStorage.setItem("cartdata",JSON.stringify(cartdata))
+                card.innerHTML=""
             })
 
+           
+           
 
 
 
 
 
 
-
+            billitems.append(bill)
             buttondiv.append(buttonLeft, quantity, buttonRight)
             imagediv.append(image, buttondiv)
             pricediv.append(price1, price2 ,ysave, desc)
@@ -320,12 +446,19 @@
         }
 
     }
-
-
-
-
-
     disc_disp(cartdata)
+
+    let sum=0
+    for(let i=0;i<cartdata.length;i++){
+     sum=sum+cartdata[i].quantity*(cartdata[i].price*(1-(cartdata[i].discounts/100)))
+    }
+     if (sum!=0){
+        totalp.innerText="Total Price to pay : "+Math.floor(Number(sum)+100) +"$"
+     }
+     else {
+        totalp.innerText=""
+     }
+ 
 
 
 
@@ -340,3 +473,7 @@
 </script>
 
 </html>
+
+
+<!-- Issue when I press on remove from cart I need to manually reload it
+Issue when I add Items that are not in the cart from the home page the quantity for all becomes 0 -->
