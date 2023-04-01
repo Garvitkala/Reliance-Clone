@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+        }
+
+        body {
+            background-color: aliceblue;
+        }
+
+        #nav>img {
+            height: 75px;
+            margin: auto;
+        }
+
+        #nav {
+            background-color: red;
+            display: flex;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+
+        }
+
+        #rightText {
+            width: 20%;
+            margin: auto;
+            margin-top: 5px;
+            margin-top: 0px;
+            margin-right: 10px;
+            text-decoration: none;
+            color: white;
+
+
+        }
+
+        #rightText a {
+            display: flex;
+            text-decoration: none;
+            color: white;
+
+
+        }
+
+        #up {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            margin-top: 5px;
+            padding-bottom: 12px;
+
+
+        }
+
+        #down {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+
+
+        }
+
+        #input {
+            height: 35px;
+            width: 450px;
+            border-radius: 20px;
+            border-width: 0px;
+            margin: auto;
+            margin-bottom: 10px;
+            padding-left: 15px;
+        }
+
+        .bluenav {
+            background-color: blue;
+            display: flex;
+            justify-content: space-evenly;
+            height: 30px;
+            margin: auto;
+
+        }
+
+        .bluenav>div {
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .bluenav>div>p {
+            color: white;
+            padding-top: 5px;
+            height: 30px;
+            margin: auto;
+            width: 130px;
+        }
+
+        .bluenav>div>p:hover {
+            background-color: red;
+            transition: 0.1s;
+        }
+
+        /* mobile container */
+        #mobiles_drop_down:hover+.containerMobiles {
+
+            opacity: 1;
+            transition: 1s;
+
+        }
+
+        .containerMobiles {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            padding-top: 20px;
+            opacity: 0;
+
+        }
+
+        .containerMobiles div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerMobiles div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerMobiles a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerMobiles p {
+            color: white;
+        }
+
+
+
+        /* Accessories container */
+        #accessories_drop_down:hover+.containerAccessories {
+            opacity: 1;
+            transition: 1s;
+        }
+
+        .containerAccessories {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -1130px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+
+        }
+
+        .containerAccessories div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerAccessories div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerAccessories a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerAccessories p {
+            color: white;
+        }
+
+        /* personal container */
+
+        #personal_drop_down:hover+.containerPersonal {
+            opacity: 1;
+            transition: 1s;
+
+        }
+
+        .containerPersonal {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -980px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+
+        }
+
+        .containerPersonal div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerPersonal div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerPersonal a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerPersonal p {
+            color: white;
+        }
+
+
+        /* TV Container */
+
+        #TV_drop_down:hover+.containerTV {
+            opacity: 1;
+            transition: 1s;
+
+        }
+
+        .containerTV {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -140px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+        }
+
+        .containerTV div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerTV div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerTV div:nth-child(3) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerTV a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerTV p {
+            color: white;
+        }
+
+
+        /* Audio Container */
+
+        #audio_drop_down:hover+.containerAudio {
+            opacity: 1;
+            transition: 1s;
+        }
+
+        .containerAudio {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -280px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+        }
+
+        .containerAudio div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerAudio div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerAudio div:nth-child(3) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerAudio div:nth-child(4) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerAudio a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerAudio p {
+            color: white;
+        }
+
+        /* Home appliances */
+
+        #home_drop_down:hover+.containerHomeAppliances {
+
+            opacity: 1;
+            transition: 1s;
+
+
+        }
+
+
+        .containerHomeAppliances {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -420px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+
+        }
+
+        .containerHomeAppliances div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerHomeAppliances div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerHomeAppliances div:nth-child(3) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerHomeAppliances a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerHomeAppliances p {
+            color: white;
+        }
+
+        /* computer container */
+
+        #computers_drop_down:hover+.containerComputers {
+            opacity: 1;
+            transition: 1s;
+
+        }
+
+        .containerComputers {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -560px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+
+        }
+
+        .containerComputers div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+            height: 200px;
+        }
+
+        .containerComputers div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerComputers div:nth-child(3) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerComputers a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerComputers p {
+            color: white;
+        }
+
+
+        /* camera container */
+
+        #camera_drop_down:hover+.containerCamera {
+            opacity: 1;
+            transition: 1s;
+
+        }
+
+        .containerCamera {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            margin: auto;
+            position: absolute;
+            translate: -705px;
+            padding-top: 20px;
+            opacity: 0;
+
+
+
+        }
+
+        .containerCamera div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerCamera div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerCamera a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerCamera p {
+            color: white;
+        }
+
+        /* Kitchen container */
+
+        #kitchen_drop_down:hover+.containerKitchen {
+            opacity: 1;
+            transition: 1s;
+        }
+
+        .containerKitchen {
+            display: flex;
+            background-color: blue;
+            width: 1260px;
+            translate: -850px;
+            opacity: 0;
+            margin: auto;
+            position: absolute;
+            padding-top: 20px;
+            transition: 1s;
+
+
+
+
+        }
+
+        .containerKitchen div:nth-child(1) {
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerKitchen div:nth-child(2) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerKitchen div:nth-child(3) {
+            height: 80%;
+            text-align: left;
+            padding-left: 30px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 5px;
+        }
+
+        .containerKitchen a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .containerKitchen p {
+            color: white;
+        }
+
+
+        .items {
+            border: 2px solid red;
+            height: 500px;
+            margin-top: 20px;
+            width: 90%;
+            margin: auto;
+        }
+
+        #msale {
+            height: 450px;
+            width: 100%;
+            margin-block: 30px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        #msale>div:hover {
+            height: 100%;
+            width: 18%;
+            transition: 1s;
+
+
+        }
+
+        #msale>div {
+            height: 80%;
+            width: 15%;
+            padding: 10px;
+            background: rgb(255, 255, 255);
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            transition: 1s;
+            text-align: center;
+
+        }
+
+        #msale h5 {
+            font-weight: 600;
+            width: 100%;
+            margin-bottom: 5px;
+            margin: auto;
+            height: 40px;
+
+
+        }
+
+        #msale img {
+            height: 55%;
+            width: 100%;
+            margin: auto;
+
+        }
+
+        #msale>p {
+            font-size: 13px;
+            font-weight: 150;
+
+
+        }
+
+        #pricediv {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #price {
+            color: rgb(169, 152, 52);
+            font-family: 300px;
+            text-decoration: line-through;
+            font-size: 20px;
+
+
+        }
+
+        #cart1 {
+            margin-top: 10px;
+            border: 0px;
+            background-color: rgb(186, 90, 90);
+            color: white;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            transition: 1s;
+
+        }
+
+        #cart1:hover {
+            width: 90px;
+            height: 10%;
+            transition: 4s;
+            font-size: smaller;
+        }
+
+        #price2 {
+
+            font-size: 21px;
+            color: rgb(91, 123, 49);
+        }
+
+        #disc {
+            color: rgb(186, 58, 58);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <img class="logo" src="./Images/Reliance-Digital-Logo-Vector-File.webp">
+        <input type="text" class="search" placeholder="Find your favourite products" id="input">
+        <div id="rightText">
+            <div id="up">
+                <a href="">Find a store</a>
+                <p>|</p>
+                <a href="">Buying guide</a>
+                <p>|</p>
+                <a href="">Contact us </a>
+            </div>
+            <div id="down">
+                <a href="">Select Pin Code</a>
+                <p>|</p>
+                <a href=""> Cart </a>
+                <p>|</p>
+                <a href="">Login </a>
+            </div>
+        </div>
+    </div>
+    <div class="bluenav">
+
+        <div id="mob">
+            <p id="mobiles_drop_down">Mobiles & Tablets</p>
+
+            <div class="containerMobiles">
+
+                <div>
+                    <a href=""><b>Smartphones</b></a><br>
+                    <a href=""><b>Smartwatches</b></a><br>
+                    <a href=""><b>Accessories</b></a>
+                    <p>Tablet Accessories</p>
+                    <a href="">Mobile Grips and stands</a>
+                    <a href="">Car Accessories</a>
+                    <a href="">Car Mobile Holders</a>
+                    <a href="">Memory Cards</a>
+                    <a href="">Cables and chords</a>
+                    <a href="">Chargers and adapters</a>
+                    <br>
+                </div>
+                <div>
+                    <a href=""><b>Headphones & headset</b></a><br>
+                    <p><b>Tablet & eReader</b></p>
+                    <a href="">Everyday Use Tablets below 15000</a>
+                    <a href="">Premium Tablets above 15001</a><br>
+                    <a href=""><b>Power Bank</b></a><br>
+                    <a href=""><b>eSlates</b></a>
+                </div>
+                <div>
+                    <a href=""><b>AI Learning Robots</b></a>
+                </div>
+                <img src="" alt="">
+
+
+
+            </div>
+
+        </div>
+        <div id="tv">
+            <p id="TV_drop_down">TV</p>
+            <div class="containerTV">
+
+                <div>
+                    <a href=""><b>Television</b></a>
+                    <a href="">Smart TVs</a>
+                    <a href="">32 inch TVs</a>
+                    <a href="">43 inch TVs</a>
+                    <a href="">55 inch TVs</a>
+                    <a href="">Android TVs</a>
+                    <br>
+                </div>
+                <div>
+                    <p><b>Gaming</b></p>
+                    <a href="">Gaming Consoles</a>
+                    <a href="">Gaming Accessories</a>
+                    <a href="">Gaming Titles</a><br>
+                    <a href=""><b>Projectors</b></a>
+                    <a href=""><b>Streaming Devices</b></a><br>
+
+                </div>
+                <div>
+                    <a href=""><b>Reconnect Disney | Marvel audio connection</b></a><br>
+                    <a href=""><b>TV and Audio Accessories</b></a>
+                    <a href="">Virtual reality headsets</a>
+                    <a href="">Stabalizers and surge protectors</a>
+
+
+                </div>
+                <img src="" alt="">
+            </div>
+        </div>
+        <div id="aud">
+            <p id="audio_drop_down">Audio</p>
+            <div class="containerAudio">
+
+                <div>
+                    <a href=""><b>Headphones and Headsets</b></a>
+                    <a href="">True Wireless</a>
+                    <a href="">Bluetooth Neckbands</a>
+                    <a href="">Wired Earphones</a>
+                    <a href="">On Ear Earphones</a>
+                    <a href="">Noise Cancelling Headphones</a><br>
+                </div>
+                <div>
+                    <a href=""><b>Bluethooth and WiFi Speakers</b></a>
+                    <a href="">Bluetooth Speakers</a>
+                    <a href="">Smart Speakers</a>
+                </div>
+                <div>
+                    <a href=""><b>TV Speakers and soundbars</b></a>
+                    <a href="">Soundbars</a>
+                    <a href="">Party Speakers</a>
+                    <a href="">Multimedia Speakers</a>
+
+                </div>
+                <div>
+                    <a href=""><b>Musical instruments</b></a>
+                    <a href="">Guitars and Ukuleles</a>
+                    <a href="">Microphones</a>
+                    <a href="">Musical Keyboards</a>
+
+                </div>
+                <img src="" alt="">
+
+
+
+
+            </div>
+        </div>
+        <div id="hom">
+            <p id="home_drop_down">Home Appliances</p>
+            <div class="containerHomeAppliances">
+
+                <div>
+                    <a href=""><b>Air Conditioners</b></a>
+                    <a href="">Split Air Conditioners</a>
+                    <a href="">Window Air Conditioners</a>
+                    <a href="">Smart Air Conditioners</a>
+                    <a href="">Energy Efficient Air Conditioners</a>
+                    <a href="">1 Ton Air Conditioners</a>
+                    <a href="">1.5 Ton Air Conditioners</a>
+                    <a href="">5 Star Air Conditioners</a><br>
+                    <a href=""><b>Air Coolers</b></a><br>
+                    <a href=""><b>Air Purifiers</b></a><br>
+
+                </div>
+                <div>
+                    <a href=""><b>Washing Machines</b></a>
+                    <a href="">Fully Automatic Front load</a>
+                    <a href="">Fully Automatic Top load</a><br>
+                    <a href=""><b>Refrigerators</b></a>
+                    <a href="">Single door</a>
+                    <a href="">Double Door</a>
+                    <a href="">Side by side Refrigerators</a>
+                    <a href="">Convertible Refrigerators</a>
+                </div>
+                <div>
+                    <a href=""><b>Vaccum Cleaners</b></a>
+                    <a href="">Robotic Vaccum Cleaners</a><br>
+                    <a href=""><b>Dishwashers</b></a><br>
+                    <a href=""><b>Fans</b></a><br>
+                    <a href=""><b>Cloth Dryers</b></a><br>
+                    <a href=""><b>Room Heaters</b></a><br>
+
+
+
+                </div>
+                <img src="" alt="">
+
+
+
+
+            </div>
+        </div>
+        <div id="com">
+            <p id="computers_drop_down">Computers</p>
+            <div class="containerComputers">
+
+                <div>
+                    <a href=""><b>Laptops</b></a>
+                    <a href="">Basic use laptops</a>
+                    <a href="">Student Laptops</a>
+                    <a href="">Thin and light Laptops</a>
+                    <a href="">Multi-Tasking Laptops</a>
+                    <a href="">Gaming Laptops</a>
+                    <a href="">Content creator Laptops</a><br>
+                    <a href=""><b>Computer Monitors</b></a><br>
+                    <a href=""><b>Desktops & All-In-Ones</b></a><br>
+
+
+                </div>
+                <div>
+                    <a href=""><b>Bluetooth & WiFi Speakers</b></a><br>
+                    <a href=""><b>Internet Connectivity Devices</b></a>
+                    <a href="">Routers </a>
+                    <a href="">WiFi Range Extenders </a>
+                    <a href="">Wireless USB Adapters</a><br>
+                    <a href=""><b>Printers & Inks</b></a>
+                    <a href="">Printers </a>
+                    <a href="">Toners & Ink Cartridges</a><br>
+                    <a href=""><b>Data Storage Devices</b></a>
+                    <a href="">Memory Cards </a>
+                    <a href="">Pen Drives & OTG Drives</a>
+                    <a href="">Hard Disks & SSD</a><br>
+                </div>
+                <div>
+                    <a href=""><b>Computer Accessories</b></a>
+                    <a href="">Upto 72% Off, Only on Reliancedigital.in</a>
+                    <a href="">Computer Networking Cables</a>
+                    <a href="">Laptop Chargers & Adaptor</a>
+                    <a href="">Laptop Batteries</a>
+                    <a href="">Hubs & Docks</a>
+                    <a href="">Laptop Bags & Sleeves</a>
+                    <a href="">Laptop Cooling Pad</a>
+                    <a href="">Laptop Screen Protectors</a>
+                    <a href="">Laptop Tables & Stands</a>
+                    <a href="">Mouse Pads</a><br>
+                    <a href=""><b>Input Devices</b></a>
+                    <a href="">Keyboards</a>
+                    <a href="">Computer Mouse</a>
+                    <a href="">Stylus Pens</a><br>
+
+
+
+
+                </div>
+                <img src="" alt="">
+
+
+
+
+            </div>
+        </div>
+        <div id="cam">
+            <p id="camera_drop_down">Cameras</p>
+            <div class="containerCamera">
+
+                <div>
+                    <a href=""><b>DSLR Cameras</b></a>
+                    <a href=""><b>Mirrorless Cameras</b></a>
+                    <a href=""><b>Point & Shoot Cameras</b></a>
+                    <a href=""><b>ProSumer Cameras</b></a>
+                    <a href=""><b>Action Cameras</b></a>
+                    <a href=""><b>Photo Storage Devices</b></a>
+                    <a href="">Memory Cards</a>
+                    <a href="">Pen Drives</a><br>
+                </div>
+                <div>
+                    <a href=""><b>Binoculars</b></a><br>
+                    <a href=""><b>Camera Lens</b></a><br>
+                    <a href=""><b>Digital Camera Accessories</b></a>
+                    <a href="">Camera Batteries & Chargers</a>
+                    <a href="">Camera bags & cases</a>
+                    <a href="">Tripods & Monopods</a>
+                    <a href="">Action Camera Accessories</a><br>
+                </div>
+                <img src="" alt="">
+
+
+
+
+            </div>
+        </div>
+        <div id="kit">
+            <p id="kitchen_drop_down">Kitchen Appliances</p>
+            <div class="containerKitchen">
+
+                <div>
+                    <a href=""><b>Microwave Ovens</b></a>
+                    <a href=""><b>Water Purifiers</b></a>
+                    <a href=""><b>Fruits and Vegetable Cleaner</b></a>
+                    <a href=""><b>Mobile Grips and stands</b></a>
+                    <a href=""><b>Oven Toaster Grillers (OTG)</b></a>
+                    <a href=""><b>Cookwares</b></a>
+                    <a href=""><a>Juicer Mixer Grinders</a></a>
+                    <a href="">Juicers</a>
+                    <a href="">Hand Mixers</a>
+                    <a href="">Mixer Grinders</a>
+                    <a href="">Choppers & Slicers</a>
+                </div>
+                <div>
+                    <a href=""><b>Induction Cookers</b></a>
+                    <a href=""><b>Food Processors</b></a>
+                    <a href=""><b>Blenders</b></a>
+                    <a href=""><b>Kitchen Hobs & Gas Stoves</b></a>
+                    <a href=""><b>Kitchen Chimneys</b></a>
+                    <a href=""><b>Rice Cookers</b></a>
+                    <a href=""><b>Sandwich Makers</b></a>
+                    <a href=""><b>Popup Toasters</b></a>
+                    <a href=""><b>Coffee Makers & Grinders</b></a>
+                </div>
+                <div>
+                    <a href=""><b>Reconnect Disney|Marvel Kitchen Collection</b></a>
+                    <a href=""><b>Air Fryers</b></a>
+                    <a href=""><b>Electric Kettles</b></a>
+                    <a href=""><b>Water Dispensers</b></a>
+                    <a href=""><b>Wet Grinders</b></a>
+                    <a href=""><b>Flour Mills</b></a>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+        <div id="per">
+            <p id="personal_drop_down">Personal Care</p>
+            <div class="containerPersonal">
+
+                <div>
+                    <a href="">Smartphones</a>
+                    <a href="">Smartwatches</a>
+                    <a href="">Accessories</a>
+                    <p>Tablet Accessories</p>
+                    <a href="">Mobile Grips and stands</a>
+                    <a href="">Car Accessories</a>
+                    <a href="">Car Mobile Holders</a>
+                    <a href="">Memory Cards</a>
+                    <a href="">Cables and chords</a>
+                    <a href="">Chargers and adapters</a>
+                </div>
+                <div>
+                    <a href="">Headphones & headset</a>
+                    <p>Tablet & eReader</p>
+                    <a href="">Everyday Use Tablets below 15000</a>
+                    <a href="">Premium Tablets above 15001</a>
+                    <a href="">Power Bank</a>
+                    <a href="">eSlates</a>
+                </div>
+                <div>
+                    <a href="">AI Learning Robots</a>
+                </div>
+                <img src="" alt="">
+
+
+
+
+            </div>
+        </div>
+        <div id="acc">
+            <p id="accessories_drop_down">Accessories</p>
+            <div class="containerAccessories">
+
+                <div>
+                    <a href="">Smartphones</a>
+                    <a href="">Smartwatches</a>
+                    <a href="">Accessories</a>
+                    <p>Tablet Accessories</p>
+                    <a href="">Mobile Grips and stands</a>
+                    <a href="">Car Accessories</a>
+                    <a href="">Car Mobile Holders</a>
+                    <a href="">Memory Cards</a>
+                    <a href="">Cables and chords</a>
+                    <a href="">Chargers and adapters</a>
+                </div>
+                <div>
+                    <a href="">Headphones & headset</a>
+                    <p>Tablet & eReader</p>
+                    <a href="">Everyday Use Tablets below 15000</a>
+                    <a href="">Premium Tablets above 15001</a>
+                    <a href="">Power Bank</a>
+                    <a href="">eSlates</a>
+                </div>
+                <div>
+                    <a href="">AI Learning Robots</a>
+                </div>
+                <img src="" alt="">
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="header1">
+        <img id="himg">
+    </div>
+    <div class="header2">
+        <img id="himg">
+    </div>
+    <div class="items1">
+        <h1>Digital Midnight Sale - Limited Period Only!</h1>
+        <div id="msale">
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+<script>
+    let items1 = document.getElementsByClassName("items1")[0]
+    let msale = document.getElementById("msale")
+    let tv = document.getElementById("tv")
+    let aud = document.getElementById("aud")
+    let hom = document.getElementById("hom")
+    let com = document.getElementById("com")
+    let cam = document.getElementById("cam")
+    let kit = document.getElementById("kit")
+    let per = document.getElementById("per")
+    let acc = document.getElementById("acc")
+    let mobiles_drop_down = document.getElementById("mobiles_drop_down")
+    let containerMobiles = document.getElementsByClassName("containerMobiles")[0]
+    let containerTV = document.getElementsByClassName("containerTV")[0]
+    let containerAudio = document.getElementsByClassName("containerAudio")[0]
+    let containerHomeAppliances = document.getElementsByClassName("containerHomeAppliances")[0]
+    let containerComputers = document.getElementsByClassName("containerComputers")[0]
+    let containerCamera = document.getElementsByClassName("containerCamera")[0]
+    let containerKitchen = document.getElementsByClassName("containerKitchen")[0]
+    let containerPersonal = document.getElementsByClassName("containerPersonal")[0]
+    let containerAccessories = document.getElementsByClassName("containerAccessories")[0]
+
+
+
+    let header1 = document.getElementsByClassName("header1")[0]
+    let header2 = document.getElementsByClassName("header2")[0]
+
+    let i = 0
+
+
+
+
+
+    // for header 1
+    setInterval(() => {
+        header1.innerHTML = ""
+        himg = document.createElement("img")
+
+        himg.setAttribute("src", headerimages[i])
+        i++
+        if (i == 3) { i = 0 }
+
+        header1.append(himg)
+
+    }, 2500);
+
+    i = 0
+
+    // for header 
+    setInterval(() => {
+        header2.innerHTML = ""
+        himg = document.createElement("img")
+
+        himg.setAttribute("src", headerimages[i])
+        i++
+        if (i == 3) { i = 0 }
+
+        header2.append(himg)
+
+    }, 3000);
+
+    i = 0
+
+    //Images of header 1
+    let headerimages = [
+        "./Images/Header1 Images/IPL-Carousel-Banner-27-03-2023-02.jpg",
+        "./Images/Header1 Images/MIdnight-Sale-Carousel-D.jpg",
+        "./Images/Header1 Images/Summer-Offer-Reliance-1365x260 (1).jpg",
+    ]
+
+
+
+
+
+
+    //Displaying Images
+    const electronics = [
+        {
+            id: 1,
+            category: 'Mobiles',
+            title: 'Samsung Galaxy S21 Ultra 5G',
+            description: 'The Samsung Galaxy S21 Ultra 5G is a premium flagship smartphone that comes with a stunning 6.8-inch Dynamic AMOLED 2X display and a powerful Exynos 2100 processor. It features a quad-camera setup at the back with a 108MP primary sensor, a 12MP ultra-wide lens, a 10MP periscope lens, and a 10MP telephoto lens. The phone runs on Android 11 with Samsung One UI 3.1 on top and is powered by a 5000mAh battery with support for 25W fast charging and 15W wireless charging.',
+            rating: 4.8,
+            price: 1199.99
+        },
+        {
+            id: 2,
+            category: 'Mobiles',
+            title: 'Apple iPhone 13 Pro Max',
+            description: 'The Apple iPhone 13 Pro Max is the latest addition to Apples iPhone lineup. It features a 6.7-inch Super Retina XDR display and is powered by Apples A15 Bionic chip. The phone comes with a triple-camera setup at the back with a 12MP primary sensor, a 12MP ultra-wide lens, and a 12MP telephoto lens. It runs on iOS 15 and is powered by a 4352mAh battery with support for 20W fast charging and 15W wireless charging.',
+            rating: 4.9,
+            price: 1299.99
+        },
+        {
+            id: 3,
+            category: 'Mobiles',
+            title: 'OnePlus 9 Pro',
+            description: 'The OnePlus 9 Pro is a flagship smartphone that comes with a 6.7-inch Fluid AMOLED display and is powered by the Snapdragon 888 chipset. It features a quad-camera setup at the back with a 48MP primary sensor, a 50MP ultra-wide lens, an 8MP telephoto lens, and a 2MP monochrome sensor. The phone runs on Android 11 with OxygenOS 11 on top and is powered by a 4500mAh battery with support for 65W fast charging and 50W wireless charging.',
+            rating: 4.7,
+            price: 999.99
+        },
+        {
+            id: 4,
+            category: 'Mobiles',
+            title: 'Xiaomi Mi 11 Ultra',
+            description: 'The Xiaomi Mi 11 Ultra is a high-end smartphone that comes with a 6.81-inch AMOLED display and is powered by the Snapdragon 888 chipset. It features a triple-camera setup at the back with a 50MP primary sensor, a 48MP ultra-wide lens, and a 48MP periscope lens. The phone runs on Android 11 with MIUI 12.5 on top and is powered by a 5000mAh battery with support for 67W fast charging and 67W wireless charging.',
+            rating: 4.6,
+            price: 1099.99
+        },
+        {
+            id: 5,
+            category: "Speakers",
+            title: "Bose SoundLink Revolve+ Portable Bluetooth Speaker",
+            description: "Enjoy high-quality audio with the Bose SoundLink Revolve+ Portable Bluetooth Speaker. This compact yet powerful speaker offers 360-degree sound for an immersive listening experience. It features a durable aluminum body and is IPX4-rated to withstand splashes of water. The SoundLink Revolve+ has a battery life of up to 16 hours, making it perfect for all-day listening. It also features a built-in speakerphone for taking calls and voice prompts to guide you through the setup process. With Bluetooth connectivity, you can easily connect your devices and stream your favorite music wirelessly.",
+            rating: {
+                rate: 4.7,
+                count: 123
+            },
+            price: 299
+        },
+        {
+            id: 6,
+            category: "TV",
+            title: "LG C1 4K OLED TV",
+            description: "Experience vivid colors and stunning contrast with the LG C1 4K OLED TV. This smart TV features a 4K OLED display with self-lit pixels that create perfect black and infinite contrast. It also supports HDR content, providing an immersive viewing experience with lifelike colors and detail. The LG C1 is powered by the Gen4 AI Processor 4K, which enhances picture and sound quality. With built-in Wi-Fi and Bluetooth, you can easily connect to your favorite streaming services and other devices. The TV also features webOS, LG's smart TV platform, which provides access to a wide range of apps and services.",
+            rating: {
+                rate: 4.9,
+                count: 234
+            },
+            price: 1799
+        },
+        {
+            id: 7,
+            category: "Speakers",
+            title: "JBL Flip 5 Waterproof Portable Bluetooth Speaker",
+            description: "Take your music anywhere with the JBL Flip 5 Waterproof Portable Bluetooth Speaker. This rugged speaker features a waterproof design, making it perfect for outdoor use. It also features a powerful 4800mAh rechargeable battery, providing up to 12 hours of playtime. The Flip 5 delivers high-quality sound with a deep bass response, thanks to its racetrack-shaped driver and dual passive radiators. With Bluetooth connectivity, you can easily connect your devices and stream your favorite music wirelessly.",
+            rating: {
+                rate: 4.5,
+                count: 567
+            },
+            price: 119
+        },
+        {
+            id: 8,
+            category: "TV",
+            title: "Samsung QN90A Neo QLED 4K TV",
+            description: "Experience stunning visuals with the Samsung QN90A Neo QLED 4K TV. This smart TV features a Quantum Processor 4K that enhances picture and sound quality. It also features a 4K QLED display with 100% color volume, providing lifelike colors and vivid detail. The QN90A supports HDR content and features a slim, sleek design that blends seamlessly with your home decor. With built-in Wi-Fi and Bluetooth, you can easily connect to your favorite streaming services and other devices. The TV also features Samsung's smart TV platform, providing access to a wide range of apps and services.",
+            rating: {
+                rate: 4.8,
+                count: 456
+            },
+            price: 348
+        },
+        {
+            id: 9,
+            category: "Headphones",
+            title: "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
+            description: "The Sony WH-1000XM4 Wireless Noise-Canceling Headphones are the perfect headphones for people who want high-quality sound without any background noise. The headphones feature a powerful noise-cancelling processor that blocks out background noise, and a quick attention mode that allows you to instantly hear the sounds around you. The headphones also have touch controls that allow you to control music and answer phone calls with ease.",
+            rating: {
+                rate: 4.6,
+                count: 924
+            },
+            price: 348
+        },
+        {
+            id: 10,
+            category: "TV",
+            title: "LG OLED77C1PUB 77-inch 4K Smart OLED TV",
+            description: "The LG OLED77C1PUB 77-inch 4K Smart OLED TV is a top-of-the-line television with an impressive array of features. The TV has a sleek design and a stunning picture quality with its OLED display. It also features webOS, LG's smart TV platform, which allows you to easily access streaming services like Netflix and Hulu, as well as connect to your other smart devices. The TV also has AI-powered picture and sound enhancements, so you can enjoy an even more immersive viewing experience.",
+            rating: {
+                rate: 4.8,
+                count: 96
+            },
+            price: 3999
+        },
+        {
+            id: 11,
+            category: "Mobiles",
+            title: "Samsung Galaxy S21 5G Factory Unlocked Android Cell Phone",
+            description: "The Samsung Galaxy S21 5G is the latest flagship smartphone from Samsung. It features a stunning 6.2-inch Dynamic AMOLED 2X display, a powerful Snapdragon 888 processor, and a triple-camera system that takes stunning photos and videos. The phone also comes with 5G connectivity, so you can take advantage of super-fast download and upload speeds. Other features include a long-lasting battery, wireless charging, and IP68 water and dust resistance.",
+            rating: {
+                rate: 4.7,
+                count: 217
+            },
+            price: 699
+        },
+        {
+            id: 12,
+            category: "Smartwatches",
+            title: "Apple Watch Series 7",
+            description: "The Apple Watch Series 7 is the latest iteration of Apple's popular smartwatch. It features a larger, always-on Retina display that is 20% larger than the Series 6. The watch also has a faster charging time and a new full keyboard that makes it easier to type messages and emails. The watch comes in a range of colors and finishes, and it features a range of health and fitness tracking features, including blood oxygen and ECG monitoring.",
+            rating: {
+                rate: 4.9,
+                count: 127
+            },
+            price: 399
+        },
+        {
+            id: 13,
+            category: "TV",
+            title: "Samsung 55-Inch 4K Ultra HD Smart LED TV",
+            description: "Experience stunningly vivid color, clarity and detail with this 55-inch Samsung 4K Ultra HD Smart LED TV. It features 4K resolution and HDR technology, providing lifelike images that make you feel like you're right in the middle of the action. The TV also features Samsung's Smart TV platform, giving you access to streaming services, apps, and more. With built-in Wi-Fi, you can easily connect the TV to your home network and enjoy your favorite content without any hassle. The TV also includes multiple HDMI and USB ports, allowing you to connect all your favorite devices.",
+            rating: { rate: 4.5, count: 100 },
+            price: 799.99
+        },
+        {
+            id: 14,
+            category: "Speakers",
+            title: "Bose SoundLink Micro Bluetooth Speaker",
+            description: "The Bose SoundLink Micro Bluetooth Speaker is a small and portable speaker that delivers big sound. With a range of up to 30 feet, this speaker lets you play music from your phone or tablet wirelessly. It also features a built-in microphone, allowing you to take calls and access your phone's virtual assistant. The speaker is rugged and waterproof, making it perfect for outdoor adventures. It comes with a rechargeable battery that provides up to 6 hours of playtime on a single charge.",
+            rating: { rate: 4.7, count: 200 },
+            price: 99
+        },
+        {
+            id: 15,
+            category: "Mobiles",
+            title: "OnePlus 9 Pro 5G",
+            description: "The OnePlus 9 Pro 5G is a flagship smartphone that delivers outstanding performance and features. It has a 6.7-inch Fluid AMOLED display with a 120Hz refresh rate, providing a smooth and responsive experience. The phone is powered by the Qualcomm Snapdragon 888 processor and comes with up to 12GB of RAM, making it capable of handling even the most demanding tasks. The camera system includes a 48MP main camera, a 50MP ultra-wide camera, and an 8MP telephoto camera, allowing you to capture stunning photos and videos. The phone also features 5G connectivity, Wi-Fi 6, and Bluetooth 5.2, providing fast and reliable connectivity.",
+            rating: { rate: 4.9, count: 300 },
+            price: 969
+        },
+        {
+            id: 16,
+            category: "Laptops",
+            title: "ASUS ROG Zephyrus S17",
+            description: "The ASUS ROG Zephyrus S17 is a powerful and portable gaming laptop. It features a 17.3-inch Full HD display with a 300Hz refresh rate, providing smooth and responsive visuals. The laptop is powered by the Intel Core i7-11800H processor and comes with up to 32GB of RAM and an NVIDIA GeForce RTX 3080 graphics card, making it capable of handling even the most demanding games. The laptop also features a backlit keyboard, Wi-Fi 6, and Bluetooth 5.1, providing fast and reliable connectivity.",
+            rating: { rate: 4.8, count: 150 },
+            price: 2899
+        },
+        {
+            id: 17,
+            category: "Speakers",
+            title: "JBL Flip 5 Waterproof Portable Bluetooth Speaker",
+            description: "Enjoy powerful sound anywhere with this JBL Flip 5 portable Bluetooth speaker. The rugged design provides durability, while the IPX7 waterproof rating offers protection against splashes and spills. This JBL Flip 5 portable Bluetooth speaker has a built-in rechargeable battery, which delivers up to 12 hours of playtime on a single charge.",
+            rating: { rate: 4.7, count: 250 },
+            price: 119.99
+        },
+        {
+            id: 18,
+            category: "Speakers",
+            title: "Sony SRS-XB43 EXTRA BASS Wireless Portable Speaker",
+            description: "Experience powerful, clear sound with this Sony SRS-XB43 EXTRA BASS wireless portable speaker. The X-Balanced speaker unit and two passive radiators provide rich, full-range audio, while the IP67 rating offers resistance against water, dust and rust. This Sony SRS-XB43 EXTRA BASS wireless portable speaker has a rechargeable battery that delivers up to 24 hours of playback time.",
+            rating: { rate: 4.8, count: 100 },
+            price: 249.99
+        },
+        {
+            id: 19,
+            category: "Speakers",
+            title: "Bose SoundLink Color II Bluetooth Speaker",
+            description: "The Bose SoundLink Color II is a portable Bluetooth speaker that delivers clear, full-range sound you might not expect from a compact speaker. It's small, durable and simple to use, and it connects wirelessly to your smartphone, tablet or other Bluetooth device. This speaker is also water-resistant, making it perfect for outdoor use.",
+            rating: { rate: 4.6, count: 350 },
+            price: 129
+        },
+        {
+            id: 20,
+            category: "Speakers",
+            title: "Sonos Beam Soundbar with Voice Control",
+            description: "Upgrade your home entertainment with this Sonos Beam soundbar. The compact size fits easily on a shelf or wall, while the advanced sound technology provides clear dialogue and deep, rich bass. This Sonos Beam soundbar comes with built-in Amazon Alexa and Google Assistant, making it easy to control with your voice or the Sonos app.",
+            rating: { rate: 4.5, count: 200 },
+            price: 399
+        },
+        {
+            id: 21,
+            category: "TV",
+            title: "Samsung 50-Inch Class Crystal UHD TU-8000 Series - 4K UHD HDR Smart TV with Alexa Built-in",
+            description: "Experience stunning picture quality with this Samsung 50-inch 4K UHD smart TV. The Crystal Processor 4K provides clear visuals for an immersive viewing experience, while the Alexa and Google Assistant compatibility enables voice control. This Samsung 50-inch 4K UHD smart TV has a 60Hz refresh rate, providing smooth motion for sports and action-packed movies.",
+            rating: { rate: 4.6, count: 500 },
+            price: 547.99
+        },
+        {
+            id: 22,
+            category: "Mobiles",
+            title: "OnePlus Nord CE 5G",
+            description: "OnePlus Nord CE 5G is a powerful smartphone with a Qualcomm Snapdragon 750G processor. It has a 6.43-inch Full HD+ AMOLED display with a 90Hz refresh rate. The phone comes with 6GB of RAM and 128GB of internal storage. It has a triple camera setup at the back with a 64MP primary sensor, an 8MP ultra-wide sensor, and a 2MP monochrome sensor. The phone runs on OxygenOS 11 based on Android 11 and has a 4500mAh battery with support for Warp Charge 30T fast charging.",
+            rating: { rate: 4.2, count: 176 },
+            price: 24999
+        },
+        {
+            id: 23,
+            category: "TV",
+            title: "Sony BRAVIA X9000H",
+            description: "The Sony BRAVIA X9000H is a 4K Ultra HD LED TV with a 55-inch screen size. It features Sony's X1 4K HDR processor that delivers vibrant colors and sharp details. The TV has a built-in Google Assistant and supports Amazon Alexa for voice control. It has 4 HDMI ports, 2 USB ports, and an Ethernet port for connectivity. The TV runs on Android TV and has access to Google Play Store and streaming services like Netflix, Amazon Prime Video, and Disney+ Hotstar.",
+            rating: { rate: 4.5, count: 246 },
+            price: 99999
+        },
+        {
+            id: 24,
+            category: "Speakers",
+            title: "JBL Flip 5",
+            description: "The JBL Flip 5 is a portable Bluetooth speaker that delivers powerful sound with a deep bass. It has a 4800mAh battery that provides up to 12 hours of playtime. The speaker is waterproof and has an IPX7 rating, making it ideal for outdoor use. It features a durable fabric material and comes in multiple colors. The speaker has a PartyBoost feature that allows you to pair multiple JBL PartyBoost-compatible Speakers for an immersive listening experience.",
+            rating: { rate: 4.8, count: 1279 },
+            price: 8999
+        },
+        {
+            id: 25,
+            category: "Laptops",
+            title: "Lenovo IdeaPad S145",
+            description: "The Lenovo IdeaPad S145 is a budget laptop with a 15.6-inch Full HD display. It is powered by an Intel Core i3 processor and has 4GB of RAM and 1TB of HDD storage. The laptop runs on Windows 10 Home and comes with a pre-installed Microsoft Office Home & Student 2019. It has a sleek design with a narrow bezel and comes in multiple colors. The laptop has a fast charging feature that charges the battery up to 80% in just 1 hour.",
+            rating: { rate: 3.9, count: 345 },
+            price: 31990
+        },
+        {
+            id: 26,
+            category: "Laptops",
+            title: "Dell inspiron",
+            description: "The Lenovo IdeaPad S145 is a budget laptop with a 15.6-inch Full HD display. It is powered by an Intel Core i3 processor and has 4GB of RAM and 1TB of HDD storage. The laptop runs on Windows 10 Home and comes with a pre-installed Microsoft Office Home & Student 2019. It has a sleek design with a narrow bezel and comes in multiple colors. The laptop has a fast charging feature that charges the battery up to 80% in just 1 hour.",
+            rating: { rate: 3.9, count: 345 },
+            price: 31990
+        }
+
+
+    ]
+    fetched = electronics
+
+    let discounts1 = [20, 30, 20, 10, 34, 30, 20, 40, 10, 40, 50, 30, 32, 54, 34, 23, 54, 65, 43, 23, 45, 42, 23, 54]
+    let prodImg = [
+        "./Images/Prod Images/1.jpg",
+        "./Images/Prod Images/2.jpg",
+        "./Images/Prod Images/3.jpg",
+        "./Images/Prod Images/4.jpg",
+        "./Images/Prod Images/5.jpg",
+        "./Images/Prod Images/6.jpg",
+        "./Images/Prod Images/7.jpg",
+        "./Images/Prod Images/8.jpg",
+        "./Images/Prod Images/9.jpg",
+        "./Images/Prod Images/10.jpg",
+        "./Images/Prod Images/11.jpg",
+        "./Images/Prod Images/12.jpg",
+        "./Images/Prod Images/13.jpg",
+        "./Images/Prod Images/14.jpg",
+        "./Images/Prod Images/15.jpg",
+        "./Images/Prod Images/16.jpg",
+        "./Images/Prod Images/17.jpg",
+        "./Images/Prod Images/18.jpg",
+        "./Images/Prod Images/19.jpg",
+        "./Images/Prod Images/20.jpg",
+        "./Images/Prod Images/21.jpg",
+        "./Images/Prod Images/22.jpg",
+        "./Images/Prod Images/23.jpg",
+        "./Images/Prod Images/24.jpg",
+        "./Images/Prod Images/25.jpg",
+        "./Images/Prod Images/26.jpg",
+    ]
+    for (let i = 0; i < fetched.length; i++) {
+        fetched[i].discounts = discounts1[i]
+        fetched[i].image = prodImg[i]
+        fetched[i].quantity=0
+    }
+    fetched.sort((b, a) => {
+        if (a.discounts < b.discounts) {
+            return -1;
+        } else if (a.discounts > b.discounts) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+    let cartdata = localStorage.getItem("cartdata")
+    if (cartdata === null) {
+        cartdata = []
+    } else {
+        cartdata = JSON.parse(cartdata)
+    }
+     function reload () {
+        fetched.forEach(element => {
+        for (let i = 0; i < cartdata.length; i++) {
+            if (element.id == cartdata[i].id) {
+                element.quantity = cartdata[i].quantity
+            } 
+
+        }
+    })
+     }
+     reload()
+    function disc_disp(data) {
+        for (let i = 0; i < 6; i++) {
+            let card = document.createElement("div")
+            let img = document.createElement("img")
+            let title = document.createElement("h5")
+            let priceul = document.createElement("p")
+            let disc = document.createElement("p")
+            let pricediv = document.createElement("div")
+            let cart = document.createElement("button")
+            let price = document.createElement("p")
+            let str = ""
+            for (let j = 0; j < 40; j++) {
+                if (data[i].title[j] == undefined) {
+                    break
+                }
+
+                str = str + data[i].title[j]
+            }
+            title.innerText = str
+            pricediv.setAttribute("id", "pricediv")
+            price.setAttribute("id", "price2")
+            pricediv.setAttribute("id", "pricediv")
+            disc.setAttribute("id", "disc")
+            disc.innerText = data[i].discounts + " % OFF!"
+            priceul.setAttribute("id", "price")
+            priceul.innerText = "Price : " + data[i].price + "$"
+            cart.innerText = "Add to Cart"
+            cart.setAttribute("id", "cart1")
+            let p = 0
+            p = data[i].price * (1 - (data[i].discounts / 100))
+            p = Math.floor(p)
+            price.innerText = "Price : " + p + "$"
+            img.setAttribute("src", data[i].image)
+            cart.addEventListener("click", () => {
+                if (data[i].quantity === 0) {
+                    data[i].quantity++
+                    cartdata.push(data[i])
+                    localStorage.setItem("cartdata", JSON.stringify(cartdata))
+                } else {
+                    
+                    alert("Item is in the Cart!")
+
+
+                }
+                reload()
+            });
+            pricediv.append(priceul, disc)
+            card.append(img, title, pricediv, price, cart)
+            msale.append(card)
+        }
+    }
+
+
+
+    disc_disp(fetched)
+    
+
+
+</script>
+
+</html>
