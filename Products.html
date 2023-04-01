@@ -22,7 +22,7 @@
         }
 
         #nav {
-            background-color: red;
+            background-color: rgb(230, 63, 63);
             display: flex;
             justify-content: space-between;
             position: sticky;
@@ -101,8 +101,13 @@
         }
 
         .bluenav>div>p:hover {
-            background-color: red;
+            background-color: rgb(230, 63, 63);
             transition: 0.1s;
+        }
+
+        .bluenav a {
+            text-decoration: none;
+            color: white;
         }
 
         /* mobile container */
@@ -595,7 +600,7 @@
 
 
         .items {
-            border: 2px solid red;
+            border: 2px solid rgb(230, 63, 63);
             height: 500px;
             margin-top: 20px;
             width: 90%;
@@ -705,10 +710,45 @@
             display: flex;
         }
 
+
+
         #filtercontainer {
-            border: 2px solid red;
-            height: 900px;
-            width: 100%;
+            height: 700px;
+            width: 20%;
+            background-color: white;
+            margin-right: 30px;
+            margin-top: 60px;
+            margin-left: 30px;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+        }
+
+        #filtercontainer>div:nth-child(2) {
+            padding: 40px;
+            color: grey;
+            font-size: 20px;
+
+        }
+
+        #filtercontainer>div:nth-child(2)>input {
+            margin-top: 20px;
+        }
+
+        #filtercontainer>div:nth-child(1) {
+            color: grey;
+            font-size: 20px;
+            padding: 50px;
+
+        }
+
+        #filtercontainer>div:nth-child(1)>input {
+
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+        #filtercontainer>div:nth-child(1)>h3{
+
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -716,7 +756,11 @@
 <body>
     <div id="nav">
         <img class="logo" src="./Images/Reliance-Digital-Logo-Vector-File.webp">
-        <input type="text" class="search" placeholder="Find your favourite products" id="input">
+    
+            <input type="text" class="search" placeholder="Find your favourite products" id="input">
+    
+        
+        
         <div id="rightText">
             <div id="up">
                 <a href="">Find a store</a>
@@ -728,16 +772,16 @@
             <div id="down">
                 <a href="">Select Pin Code</a>
                 <p>|</p>
-                <a href=""> Cart </a>
+                <a href="cart.html"> Cart </a>
                 <p>|</p>
-                <a href="">Login </a>
+                <a href="Index.html">Home </a>
             </div>
         </div>
     </div>
     <div class="bluenav">
 
         <div id="mob">
-            <p id="mobiles_drop_down">Mobiles & Tablets</p>
+            <p id="mobiles_drop_down"><a href="Products.html">Mobiles & Tablets</a></p>
 
             <div class="containerMobiles">
 
@@ -773,7 +817,7 @@
 
         </div>
         <div id="tv">
-            <p id="TV_drop_down">TV</p>
+            <p id="TV_drop_down"><a href="Products.html">TV</a></p>
             <div class="containerTV">
 
                 <div>
@@ -806,7 +850,7 @@
             </div>
         </div>
         <div id="aud">
-            <p id="audio_drop_down">Audio</p>
+            <p id="audio_drop_down"><a href="Products.html">Audio</a></p>
             <div class="containerAudio">
 
                 <div>
@@ -844,7 +888,7 @@
             </div>
         </div>
         <div id="hom">
-            <p id="home_drop_down">Home Appliances</p>
+            <p id="home_drop_down"><a href="Products.html">Home Appliances</a></p>
             <div class="containerHomeAppliances">
 
                 <div>
@@ -889,7 +933,7 @@
             </div>
         </div>
         <div id="com">
-            <p id="computers_drop_down">Computers</p>
+            <p id="computers_drop_down"><a href="Products.html">Computers</a></p>
             <div class="containerComputers">
 
                 <div>
@@ -948,7 +992,7 @@
             </div>
         </div>
         <div id="cam">
-            <p id="camera_drop_down">Cameras</p>
+            <p id="camera_drop_down"><a href="Products.html">Cameras</a></p>
             <div class="containerCamera">
 
                 <div>
@@ -978,7 +1022,7 @@
             </div>
         </div>
         <div id="kit">
-            <p id="kitchen_drop_down">Kitchen Appliances</p>
+            <p id="kitchen_drop_down"><a href="Products.html">Kitchen Appliances</a></p>
             <div class="containerKitchen">
 
                 <div>
@@ -1021,7 +1065,7 @@
             </div>
         </div>
         <div id="per">
-            <p id="personal_drop_down">Personal Care</p>
+            <p id="personal_drop_down"><a href="Products.html">Personal Care</a></p>
             <div class="containerPersonal">
 
                 <div>
@@ -1055,7 +1099,7 @@
             </div>
         </div>
         <div id="acc">
-            <p id="accessories_drop_down">Accessories</p>
+            <p id="accessories_drop_down"><a href="Products.html">Accessories</a></p>
             <div class="containerAccessories">
 
                 <div>
@@ -1093,6 +1137,38 @@
 
 
     <div id="containermain">
+
+        <div id="filtercontainer">
+            <div>
+                <h3>Filter by Price</h3>
+                <label for="price-range">Price Range:</label> <br>
+                <span id="price-min"></span> To
+                <span id="price-max"></span> <br>
+                <input type="range" min="0" max="5000" value="500" class="slider" id="price-range"> <br>
+                <hr>
+
+            </div>
+            <div>
+                <h3>Filter by Category</h3>
+                <input type="radio" name="category" value="all" id="category-all" checked>
+                <label for="category-all">All</label> <br>
+                <input type="radio" name="category" value="TV" id="category-tv">
+                <label for="category-tv">TV</label> <br>
+                <input type="radio" name="category" value="Mobiles" id="category-mobiles">
+                <label for="category-mobiles">Mobiles</label> <br>
+                <input type="radio" name="category" value="Laptops" id="category-laptops">
+                <label for="category-laptops">Laptops</label> <br>
+                <input type="radio" name="category" value="Speakers" id="category-speakers">
+                <label for="category-speakers">Speakers</label> <br>
+
+            </div>
+
+
+
+
+
+        </div>
+
         <div class="items1">
             <h1 id="heading1">All products</h1>
             <div id="msale">
@@ -1102,32 +1178,7 @@
 
             </div>
         </div>
-        <div id="filtercontainer">
-            <div>
-                <input type="range" min="0" max="5000" value="500" class="slider" id="price-range">
-                <label for="price-range">Price Range:</label>
-                <span id="price-min"></span>
-                <span id="price-max"></span>
 
-            </div>
-            <div>
-                <input type="radio" name="category" value="all" id="category-all" checked>
-                <label for="category-all">All</label>
-                <input type="radio" name="category" value="TV" id="category-tv">
-                <label for="category-tv">TV</label>
-                <input type="radio" name="category" value="Mobiles" id="category-mobiles">
-                <label for="category-mobiles">Mobiles</label>
-                <input type="radio" name="category" value="Laptops" id="category-laptops">
-                <label for="category-laptops">Laptops</label>
-                <input type="radio" name="category" value="Speakers" id="category-speakers">
-                <label for="category-speakers">Speakers</label>
-            </div>
-
-
-
-
-
-        </div>
     </div>
 
 
@@ -1139,7 +1190,7 @@
 </body>
 
 <script>
-    let heading1=document.getElementById("heading1")
+    let heading1 = document.getElementById("heading1")
     let items1 = document.getElementsByClassName("items1")[0]
     let msale = document.getElementById("msale")
     let tv = document.getElementById("tv")
@@ -1275,7 +1326,7 @@
         },
         {
             id: 9,
-            category: "Headphones",
+            category: "Speakers",
             title: "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
             description: "The Sony WH-1000XM4 Wireless Noise-Canceling Headphones are the perfect headphones for people who want high-quality sound without any background noise. The headphones feature a powerful noise-cancelling processor that blocks out background noise, and a quick attention mode that allows you to instantly hear the sounds around you. The headphones also have touch controls that allow you to control music and answer phone calls with ease.",
             rating: {
@@ -1308,7 +1359,7 @@
         },
         {
             id: 12,
-            category: "Smartwatches",
+            category: "Mobiles",
             title: "Apple Watch Series 7",
             description: "The Apple Watch Series 7 is the latest iteration of Apple's popular smartwatch. It features a larger, always-on Retina display that is 20% larger than the Series 6. The watch also has a faster charging time and a new full keyboard that makes it easier to type messages and emails. The watch comes in a range of colors and finishes, and it features a range of health and fitness tracking features, including blood oxygen and ECG monitoring.",
             rating: {
@@ -1549,20 +1600,14 @@
     priceRange.addEventListener("input", function () {
         priceMin.innerText = priceRange.min;
         priceMax.innerText = priceRange.value;
-
-
+        heading1.innerText = "Products in range of " + priceRange.min + " to " + priceRange.value
         let p = filterByPrice(fetched)
         let q = filterByCategory(p)
-        if (q.length==0){
+        if (q.length == 0) {
             alert("increase Price")
-         } else {
+        } else {
             disc_disp(q)
         }
-      
-
-
-
-
     });
 
 
@@ -1586,60 +1631,76 @@
     }
 
     categoryAll.addEventListener("change", function () {
-        heading1.innerText="All Products"
+        heading1.innerText = "All Products in range of " + priceRange.min + " to " + priceRange.value
         let p = filterByCategory(fetched)
         let q = filterByPrice(p)
-        if (q.length==0){
+        if (q.length == 0) {
             alert("increase Price")
-         } else {
+        } else {
             disc_disp(q)
         }
     });
 
     categoryTV.addEventListener("change", function () {
-        heading1.innerText="Television"
+        heading1.innerText = "Television in range of " + priceRange.min + " to " + priceRange.value
         let p = filterByCategory(fetched)
         let q = filterByPrice(p)
-        if (q.length==0){
+        if (q.length == 0) {
             alert("increase Price")
-         } else {
+        } else {
             disc_disp(q)
         }
     });
 
     categoryMobiles.addEventListener("change", function () {
-        heading1.innerText="Mobiles"
+        heading1.innerText = "Mobiles in range of " + priceRange.min + " to " + priceRange.value
         let p = filterByCategory(fetched)
         let q = filterByPrice(p)
-        if (q.length==0){
+        if (q.length == 0) {
             alert("increase Price")
-         } else {
+        } else {
             disc_disp(q)
         }
     });
 
     categoryLaptops.addEventListener("change", function () {
-        heading1.innerText="Laptops"
+        heading1.innerText = "Laptops in range of " + priceRange.min + " to " + priceRange.value
         let p = filterByCategory(fetched)
         let q = filterByPrice(p)
-        if (q.length==0){
+        if (q.length == 0) {
             alert("increase Price")
-         } else {
+        } else {
             disc_disp(q)
         }
     });
 
     categorySpeakers.addEventListener("change", function () {
-        heading1.innerText="Speakers"
+        heading1.innerText = "Speakers in range of " + priceRange.min + " to " + priceRange.value
         let p = filterByCategory(fetched)
         let q = filterByPrice(p)
-        if (q.length==0){
+        if (q.length == 0) {
             alert("increase Price")
-         } else {
+        } else {
             disc_disp(q)
         }
     });
 
+
+
+const input = document.getElementById("input");
+const dropdown = document.getElementById("dropdown");
+
+  input.addEventListener("input", () => {
+    const value = input.value.toLowerCase();
+    const filtered = fetched.filter((item) =>
+      item.title.toLowerCase().includes(value)
+    );
+
+
+    filtered.forEach((item) => {
+      disc_disp(filtered)
+    });
+  });
 
 
 </script>

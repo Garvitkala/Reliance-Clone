@@ -22,7 +22,7 @@
         }
 
         #nav {
-            background-color: red;
+            background-color: rgb(230, 63, 63);
             display: flex;
             justify-content: space-between;
             position: sticky;
@@ -136,11 +136,13 @@
         #pricediv {
             width: 200px;
         }
-        #pricediv p{
+
+        #pricediv p {
             font-size: 8px;
             padding-top: 40px;
         }
-        #pricediv>h4{
+
+        #pricediv>h4 {
             padding-top: 10px;
             color: rgb(73, 73, 108);
         }
@@ -161,90 +163,114 @@
         #price2 {
             color: green;
         }
-        #tdiv{
+
+        #tdiv {
             width: 400px;
         }
-        #rwdiv{
+
+        #rwdiv {
             display: flex;
             justify-content: space-evenly;
         }
-        #rwdiv button{
+
+        #rwdiv button {
             padding: 20px;
             background-color: grey;
             border: 0px;
             border-radius: 10px;
             color: white;
             transition: 1s;
-            
+
         }
-        #rwdiv>button:nth-child(2){
-            background-color: red;
+
+        #rwdiv>button:nth-child(2) {
+            background-color: rgb(230, 63, 63);
         }
-        #rwdiv button:hover{
+
+        #rwdiv button:hover {
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
             transition: 0.5s;
-            
-        }
-        #rwdiv>button:nth-child(2):hover{
-
-            box-shadow: rgba(201, 20, 20, 0.25) 0px 54px 55px, rgba(201, 20, 20, 0.25)  0px -12px 30px, rgba(201, 20, 20, 0.25)  0px 4px 6px, rgba(201, 20, 20, 0.25)  0px 12px 13px, rgba(201, 20, 20, 0.25)  0px -3px 5px;
 
         }
-        #checkout{
+
+        #rwdiv>button:nth-child(2):hover {
+
+            box-shadow: rgba(201, 20, 20, 0.25) 0px 54px 55px, rgba(201, 20, 20, 0.25) 0px -12px 30px, rgba(201, 20, 20, 0.25) 0px 4px 6px, rgba(201, 20, 20, 0.25) 0px 12px 13px, rgba(201, 20, 20, 0.25) 0px -3px 5px;
+
+        }
+
+        #checkout {
             width: 500px;
-            height: 600px;
-            border: 2px solid red;
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            border-radius: 10px;
+
         }
-        #page{
+
+        #page {
             display: flex;
         }
-        #checkout>button{
+
+        #checkout>button {
             width: 100%;
             color: white;
-            background-color: red;
+            background-color: rgb(230, 63, 63);
             padding: 10px;
             border: 0px;
             transition: 0.5s;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+
 
 
         }
-        #checkout>button:hover{
+
+        #checkout>button:hover {
 
             background-color: rgb(161, 17, 17);
             transition: 0.5s;
         }
-        #pbox{
-            width: 100%;
+
+        #pbox {
+            width: 80%;
             margin-top: 30px;
-            border: 2px solid green;
             display: flex;
             justify-content: space-between;
+            margin: auto;
+            margin-top: 20px;
         }
-        #pbox input{
+
+        #pbox input {
             width: 100%;
             padding: 10px;
             text-align: center;
+            background-color: rgb(242, 242, 242);
+            border: 0px;
         }
-        #pbox button{
+
+        #pbox button {
             background-color: rgb(243, 243, 243);
             color: blue;
             border: 0px;
         }
-        #pbox button:hover{
+
+        #pbox button:hover {
             background-color: rgb(190, 190, 190);
 
 
         }
-        #totaldiv { 
+
+        #totaldiv {
             padding-top: 100px;
             text-align: center;
-           color: grey;
+            color: grey;
+            margin-bottom: 20px;
         }
-        #totaldiv h4{
+
+        #totaldiv h4 {
             font-size: 10px;
             margin: 10px;
         }
-       
     </style>
 </head>
 
@@ -263,34 +289,34 @@
             <div id="down">
                 <a href="">Select Pin Code</a>
                 <p>|</p>
-                <a href=""> Cart </a>
+                <a href="Index.html"> Home </a>
                 <p>|</p>
                 <a href="">Login </a>
             </div>
         </div>
     </div>
-    <h1>My Cart</h1>
-<div id="page">
-    <div id="cart">
+    <h1 id="MyCart">My Cart</h1>
+    <div id="page">
+        <div id="cart">
+        </div>
+
+        <div id="checkout">
+            <button>CHECKOUT</button>
+            <div id="pbox">
+                <input type="text" placeholder="COUPON CODE">
+                <button>Apply</button>
+            </div>
+            <div id="totaldiv">
+                <div id="billitems"></div>
+                <h3 id="Dcharges">Delivery charges : 100$</h3>
+                <hr>
+                <h2 id="totalp"></h2>
+            </div>
+        </div>
     </div>
-    
-    <div id="checkout">
-       <button>CHECKOUT</button>
-       <div id="pbox">
-         <input type="text" placeholder="COUPON CODE">
-         <button>Apply</button>
-       </div>
-     <div id="totaldiv">
-        <div id="billitems"></div>
-        <h3>Delivery charges : 100$</h3>
-        <hr>
-        <h2 id="totalp"></h2>
-     </div>
-    </div>
-</div>
-    
-    
-    
+
+
+
 
 
 
@@ -304,10 +330,12 @@
 </body>
 
 <script>
+    let Dcharges = document.getElementById("Dcharges")
+    let MyCart = document.getElementById("MyCart")
     let cart = document.getElementById("cart")
-    let totalp=document.getElementById("totalp")
+    let totalp = document.getElementById("totalp")
     let cartdata = localStorage.getItem("cartdata")
-    let billitems=document.getElementById("billitems")
+    let billitems = document.getElementById("billitems")
     if (cartdata === null) {
         cartdata = []
     } else {
@@ -317,10 +345,10 @@
     // //Displaying Images
     function disc_disp(data) {
         for (let i = 0; i < data.length; i++) {
-            let titlediv=document.createElement("div")
-            let rcart=document.createElement("button")
-            let wish=document.createElement("button")
-            let rwdiv=document.createElement("div")
+            let titlediv = document.createElement("div")
+            let rcart = document.createElement("button")
+            let wish = document.createElement("button")
+            let rwdiv = document.createElement("div")
             let pricediv = document.createElement("div")
             let card = document.createElement("div")
             let imagediv = document.createElement("div")
@@ -332,16 +360,16 @@
             let price1 = document.createElement("h4")
             let title = document.createElement("h3")
             let price2 = document.createElement("h3")
-            let desc=document.createElement("p")
-            let ysave=document.createElement("h4")
-            let totalp=document.createElement("h2")
-            let bill=document.createElement("h4")
+            let desc = document.createElement("p")
+            let ysave = document.createElement("h4")
+            let totalp = document.createElement("h2")
+            let bill = document.createElement("h4")
 
 
 
-            rcart.setAttribute("id","rcart")
-            rwdiv.setAttribute("id","rwdiv")
-            titlediv.setAttribute("id","tdiv")
+            rcart.setAttribute("id", "rcart")
+            rwdiv.setAttribute("id", "rwdiv")
+            titlediv.setAttribute("id", "tdiv")
             price2.setAttribute("id", "price2")
             title.setAttribute("id", "title")
             price1.setAttribute("id", "price1")
@@ -352,9 +380,9 @@
             quantity.setAttribute("id", "quantity")
             buttonRight.setAttribute("id", "buttonRight")
             pricediv.setAttribute("id", "pricediv")
-            desc.innerText= "*Delivery assurance is subject to our delivery locations staying open as per govt. regulations"
+            desc.innerText = "*Delivery assurance is subject to our delivery locations staying open as per govt. regulations"
 
-            
+
             price1.innerText = "MRP " + data[i].price * data[i].quantity + "$"
             image.setAttribute("src", data[i].image)
             buttonLeft.innerText = "<"
@@ -364,14 +392,14 @@
             let p = 0
             p = data[i].price * (1 - (data[i].discounts / 100))
             p = Math.floor((p) * data[i].quantity)
-            totalp.innerText=Number(totalp.innerText)+ p
-            
+            totalp.innerText = Number(totalp.innerText) + p
+
 
             price2.innerText = "MRP " + p + "$"
-            ysave.innerText= "You save: "  + Math.floor((data[i].price * data[i].quantity)-p) +"$"
-            wish.innerText="Add to Wishlist"
-            rcart.innerText="Remove from Cart"
-            bill.innerText=data[i].title +" : "+price2.innerText
+            ysave.innerText = "You save: " + Math.floor((data[i].price * data[i].quantity) - p) + "$"
+            wish.innerText = "Add to Wishlist"
+            rcart.innerText = "Remove from Cart"
+            bill.innerText = data[i].title + " : " + price2.innerText
 
 
 
@@ -385,16 +413,16 @@
                 p = Math.floor(p) * data[i].quantity
                 price2.innerText = "MRP" + p + "$"
 
-                if(data[i].quantity<1){
-                cartdata=cartdata.filter((element)=>{
-                if (element.id==data[i].id){ return false } else { return true }
-                
-             })
-                localStorage.setItem("cartdata",JSON.stringify(cartdata))
-                card.innerHTML=""
-            }                
+                if (data[i].quantity < 1) {
+                    cartdata = cartdata.filter((element) => {
+                        if (element.id == data[i].id) { return false } else { return true }
 
-                
+                    })
+                    localStorage.setItem("cartdata", JSON.stringify(cartdata))
+                    card.innerHTML = ""
+                }
+
+
 
             })
             buttonRight.addEventListener("click", () => {
@@ -407,19 +435,19 @@
                 price2.innerText = "MRP" + p + "$"
 
 
-            
+
 
             })
-            rcart.addEventListener("click",()=>{
-             cartdata=cartdata.filter((element)=>{
-                if (element.id==data[i].id){ return false } else { return true }
-             })
-                localStorage.setItem("cartdata",JSON.stringify(cartdata))
-                card.innerHTML=""
+            rcart.addEventListener("click", () => {
+                cartdata = cartdata.filter((element) => {
+                    if (element.id == data[i].id) { return false } else { return true }
+                })
+                localStorage.setItem("cartdata", JSON.stringify(cartdata))
+                card.innerHTML = ""
             })
 
-           
-           
+
+
 
 
 
@@ -429,9 +457,9 @@
             billitems.append(bill)
             buttondiv.append(buttonLeft, quantity, buttonRight)
             imagediv.append(image, buttondiv)
-            pricediv.append(price1, price2 ,ysave, desc)
-            rwdiv.append(wish,rcart)
-            titlediv.append(title,rwdiv)
+            pricediv.append(price1, price2, ysave, desc)
+            rwdiv.append(wish, rcart)
+            titlediv.append(title, rwdiv)
             card.append(imagediv, titlediv, pricediv)
             cart.append(card)
 
@@ -448,20 +476,30 @@
     }
     disc_disp(cartdata)
 
-    let sum=0
-    for(let i=0;i<cartdata.length;i++){
-     sum=sum+cartdata[i].quantity*(cartdata[i].price*(1-(cartdata[i].discounts/100)))
+    let sum = 0
+    for (let i = 0; i < cartdata.length; i++) {
+        sum = sum + cartdata[i].quantity * (cartdata[i].price * (1 - (cartdata[i].discounts / 100)))
     }
-     if (sum!=0){
-        totalp.innerText="Total Price to pay : "+Math.floor(Number(sum)+100) +"$"
-     }
-     else {
-        totalp.innerText=""
-     }
- 
+    if (sum != 0) {
+        totalp.innerText = "Total Price to pay : " + Math.floor(Number(sum) + 100) + "$"
+    }
+    else {
+        totalp.innerText = ""
+    }
+
+
+    if (cartdata.length == 0) {
+        MyCart.innerText = "You have no Items in your cart"
+        Dcharges.innerText = ""
+
+    }
 
 
 
+    const input = document.getElementById("input");
+input.addEventListener("click", () => {
+    window.location.href = "Products.html";
+  });
 
 
 
