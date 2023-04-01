@@ -22,7 +22,7 @@
         }
 
         #nav {
-            background-color: red;
+            background-color: rgb(230, 63, 63);
             display: flex;
             justify-content: space-between;
             position: sticky;
@@ -101,7 +101,7 @@
         }
 
         .bluenav>div>p:hover {
-            background-color: red;
+            background-color: rgb(230, 63, 63);
             transition: 0.1s;
         }
 
@@ -595,7 +595,7 @@
 
 
         .items {
-            border: 2px solid red;
+            border: 2px solid rgb(230, 63, 63);
             height: 500px;
             margin-top: 20px;
             width: 90%;
@@ -696,6 +696,11 @@
         #disc {
             color: rgb(186, 58, 58);
         }
+
+        .bluenav a{
+            text-decoration: none;
+            color: white;
+        }
     </style>
 </head>
 
@@ -714,7 +719,7 @@
             <div id="down">
                 <a href="">Select Pin Code</a>
                 <p>|</p>
-                <a href=""> Cart </a>
+                <a href="cart.html"> Cart </a>
                 <p>|</p>
                 <a href="">Login </a>
             </div>
@@ -723,7 +728,7 @@
     <div class="bluenav">
 
         <div id="mob">
-            <p id="mobiles_drop_down">Mobiles & Tablets</p>
+            <p id="mobiles_drop_down"><a href="Products.html">Mobiles & Tablets</a></p>
 
             <div class="containerMobiles">
 
@@ -759,7 +764,7 @@
 
         </div>
         <div id="tv">
-            <p id="TV_drop_down">TV</p>
+            <p id="TV_drop_down"><a href="Products.html">TV</a></p>
             <div class="containerTV">
 
                 <div>
@@ -792,7 +797,7 @@
             </div>
         </div>
         <div id="aud">
-            <p id="audio_drop_down">Audio</p>
+            <p id="audio_drop_down"><a href="Products.html">Audio</a></p>
             <div class="containerAudio">
 
                 <div>
@@ -830,7 +835,7 @@
             </div>
         </div>
         <div id="hom">
-            <p id="home_drop_down">Home Appliances</p>
+            <p id="home_drop_down"><a href="Products.html">Home Appliances</a></p>
             <div class="containerHomeAppliances">
 
                 <div>
@@ -875,7 +880,7 @@
             </div>
         </div>
         <div id="com">
-            <p id="computers_drop_down">Computers</p>
+            <p id="computers_drop_down"><a href="Products.html">Computers</a></p>
             <div class="containerComputers">
 
                 <div>
@@ -934,7 +939,7 @@
             </div>
         </div>
         <div id="cam">
-            <p id="camera_drop_down">Cameras</p>
+            <p id="camera_drop_down"><a href="Products.html">Cameras</a></p>
             <div class="containerCamera">
 
                 <div>
@@ -964,7 +969,7 @@
             </div>
         </div>
         <div id="kit">
-            <p id="kitchen_drop_down">Kitchen Appliances</p>
+            <p id="kitchen_drop_down"><a href="Products.html">Kitchen Appliances</a></p>
             <div class="containerKitchen">
 
                 <div>
@@ -1007,7 +1012,7 @@
             </div>
         </div>
         <div id="per">
-            <p id="personal_drop_down">Personal Care</p>
+            <p id="personal_drop_down"><a href="Products.html">Personal Care</a></p>
             <div class="containerPersonal">
 
                 <div>
@@ -1041,7 +1046,7 @@
             </div>
         </div>
         <div id="acc">
-            <p id="accessories_drop_down">Accessories</p>
+            <p id="accessories_drop_down"><a href="Products.html">Accessories</a></p>
             <div class="containerAccessories">
 
                 <div>
@@ -1132,6 +1137,51 @@
 
 
 
+
+
+    // for header 1
+    setInterval(() => {
+        header1.innerHTML = ""
+        himg = document.createElement("img")
+
+        himg.setAttribute("src", headerimages[i])
+        i++
+        if (i == 3) { i = 0 }
+
+        header1.append(himg)
+
+    }, 2500);
+
+    i = 0
+
+    // for header 
+    setInterval(() => {
+        header2.innerHTML = ""
+        himg = document.createElement("img")
+
+        himg.setAttribute("src", headerimages[i])
+        i++
+        if (i == 3) { i = 0 }
+
+        header2.append(himg)
+
+    }, 3000);
+
+    i = 0
+
+    //Images of header 1
+    let headerimages = [
+        "./Images/Header1 Images/IPL-Carousel-Banner-27-03-2023-02.jpg",
+        "./Images/Header1 Images/MIdnight-Sale-Carousel-D.jpg",
+        "./Images/Header1 Images/Summer-Offer-Reliance-1365x260 (1).jpg",
+    ]
+
+
+
+
+
+
+    //Displaying Images
     const electronics = [
         {
             id: 1,
@@ -1419,8 +1469,8 @@
     } else {
         cartdata = JSON.parse(cartdata)
     }
-
-    fetched.forEach(element => {
+     function reload () {
+        fetched.forEach(element => {
         for (let i = 0; i < cartdata.length; i++) {
             if (element.id == cartdata[i].id) {
                 element.quantity = cartdata[i].quantity
@@ -1428,57 +1478,8 @@
 
         }
     })
-
-
-
-
-
-
-
-
-    // for header 1
-    setInterval(() => {
-        header1.innerHTML = ""
-        himg = document.createElement("img")
-
-        himg.setAttribute("src", headerimages[i])
-        i++
-        if (i == 3) { i = 0 }
-
-        header1.append(himg)
-
-    }, 2500);
-
-    i = 0
-
-    // for header 
-    setInterval(() => {
-        header2.innerHTML = ""
-        himg = document.createElement("img")
-
-        himg.setAttribute("src", headerimages[i])
-        i++
-        if (i == 3) { i = 0 }
-
-        header2.append(himg)
-
-    }, 3000);
-
-    i = 0
-
-    //Images of header 1
-    let headerimages = [
-        "./Images/Header1 Images/IPL-Carousel-Banner-27-03-2023-02.jpg",
-        "./Images/Header1 Images/MIdnight-Sale-Carousel-D.jpg",
-        "./Images/Header1 Images/Summer-Offer-Reliance-1365x260 (1).jpg",
-    ]
-
-
-
-
-
-
-    //Displaying Images
+     }
+     reload()
     function disc_disp(data) {
         for (let i = 0; i < 6; i++) {
             let card = document.createElement("div")
@@ -1523,18 +1524,27 @@
 
 
                 }
+                reload()
             });
             pricediv.append(priceul, disc)
             card.append(img, title, pricediv, price, cart)
             msale.append(card)
         }
-
-
-
-
     }
 
+
+
     disc_disp(fetched)
+
+
+
+
+    
+const input = document.getElementById("input");
+input.addEventListener("click", () => {
+    window.location.href = "Products.html";
+  });
+    
 
 
 </script>
