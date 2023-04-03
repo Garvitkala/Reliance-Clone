@@ -626,14 +626,16 @@
             height: 450px;
             width: 100%;
             margin-block: 30px;
-            display: flex;
+            display: grid;
             justify-content: space-between;
+            grid-template-columns: repeat(7,1fr);
+            margin-left: 80px;
 
         }
 
         #msale>div:hover {
             height: 100%;
-            width: 18%;
+            width: 100%;
             transition: 1s;
 
 
@@ -641,7 +643,7 @@
 
         #msale>div {
             height: 80%;
-            width: 15%;
+            width: 90%;
             padding: 10px;
             background: rgb(255, 255, 255);
             box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -780,6 +782,35 @@
             padding-top: 10px;
             padding-bottom: 20px;
             font-size: smaller;
+        }
+        #imagediv img{
+            width: 100%;
+        }
+
+        @media screen and (max-width: 768px) {    #msale {
+            height: 450px;
+            width: 100%;
+            margin-block: 30px;
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(3,1fr);
+            margin-left: 30px;
+
+        }
+        #rightText {
+            width: 20%;
+            margin: auto;
+            margin-top: 5px;
+            margin-top: 0px;
+            margin-right: 10px;
+            text-decoration: none;
+            color: white;
+            display: none;
+
+
+        }
+
+
         }
       
     </style>
@@ -1169,7 +1200,7 @@
             <div id="imagediv"></div>
         </div>
         <button id="prev">
-            << /button>
+            < </button>
                 <button id="next">></button>
 
     </div>
