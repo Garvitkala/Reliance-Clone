@@ -1697,6 +1697,7 @@
             cart.addEventListener("click", () => {
                 if (data[i].quantity === 0) {
                     data[i].quantity++
+                    alert("Item Added to cart")
                     cartdata.push(data[i])
                     localStorage.setItem("cartdata", JSON.stringify(cartdata))
                 } else {
